@@ -1,0 +1,195 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 4px 0;
+    color:white;
+    
+  }
+
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 0.02;
+  }
+
+  .example-spacer {
+    flex: 0.4;
+  }
+
+  .example-spacer2 {
+    flex: 0.6;
+  }
+
+  .content {
+    display: flex;
+    margin: 32px auto;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: cyan;
+    text-decoration: none;
+  }
+
+    a:hover {
+      color: #125699;
+    }
+
+  button {
+    background-color: lightskyblue;
+    font-style: normal;
+    font-size: 12pt;
+    font-family: Tahoma;
+    color: brown;
+  }
+
+  .mat-icon-button {
+    background-color: coral;
+    color: white;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul li {
+    color: white;
+  }
+
+    ul li a {
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 0px;
+      font-size: 20px;
+    }
+
+  .mat-toolbar {
+    color: white;
+    justify-content: space-between;
+    background-color: blue;
+  }
+
+  nav {
+    background-color: #2A92BF;
+  }
+
+  mat-sidenav-container {
+    height: 100%;
+  }
+
+  mat-sidenav {
+    width: 240px;
+    background-color: navy;
+  }
+
+  mat-sidenav, mat-sidenav-content {
+    padding: 16px;
+  }
+
+  .example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .page-footer {
+    font-size: 12pt;
+    background-color: blue;
+    color: white;
+  }
+  
+</style>
+
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="go()">menu</mat-icon>
+    </button>
+    <div class="spacer"></div>
+    <span style="color:coral">Odeon</span>
+    <div class="spacer"></div>
+    <div>
+      {{myDate | date:'dd MMMM yyyy'}}
+      {{mydate2 | date: ' HH:mm:ss'}}
+    </div>
+    <span class="example-spacer"></span>
+    <h4 style="text-align:center" *ngIf="title2!=''">
+      {{title}} {{title2.NameSurname}}
+    </h4>
+    <span class="example-spacer2"></span>
+    <div>
+      <a style="color:coral" mat-button routerLink="/Home">Home Page</a>
+      <a style="color:coral" mat-button *ngIf="!customerService.LoggedIn()" routerLink="/Sign_In">Sign In</a>
+      <a style="color:coral" mat-button *ngIf="!customerService.LoggedIn()" routerLink="/Sign_Up/0">Sign Up</a>
+      <a style="color:coral" mat-button *ngIf="customerService.LoggedIn()" routerLink="/Home" (click)="logout()">Logout</a>
+
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    <h4>Hotel Menu</h4>
+    <ul>
+      <li>
+        <a mat-button routerLink="/Home">Home</a>
+      </li>
+      <li *ngIf="!customerService.LoggedIn()">
+        <a mat-button routerLink="/Sign_In">Sign In</a>
+      </li>
+      <li *ngIf="!customerService.LoggedIn()">
+        <a mat-button routerLink="/Sign_Up/0">Sign Up</a>
+      </li>
+      <li *ngIf="customerService.LoggedIn()">
+        <a mat-button routerLink="/CustomerList">Customer</a>
+      </li>
+      <li *ngIf="customerService.LoggedIn()">
+        <a mat-button>Reservations</a>
+      </li>
+      <li *ngIf="customerService.LoggedIn()">
+        <a mat-button>Room Status </a>
+      </li>
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+<!-- Footer -->
+<footer class="page-footer" style="color:coral">
+  <div class="footer-copyright text-center py-3">
+    {{myDate | date:'yyyy'}} Odeon: A Hotel Page
+  </div>
+</footer>
+<!-- Footer -->

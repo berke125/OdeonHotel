@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CESTURModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="USERS">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="GROUPNO" Type="numeric" Precision="19" Scale="0" />
+          <Property Name="NAME" Type="varchar" MaxLength="30" />
+          <Property Name="PASSW" Type="varchar" MaxLength="30" />
+          <Property Name="LANG" Type="numeric" Precision="19" Scale="0" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="255" />
+          <Property Name="POP3" Type="varchar" MaxLength="128" />
+          <Property Name="SMTP" Type="varchar" MaxLength="128" />
+          <Property Name="EMAILUSER" Type="varchar" MaxLength="80" />
+          <Property Name="EMAILPASS" Type="varchar" MaxLength="25" />
+          <Property Name="DELETEONREAD" Type="numeric" Precision="19" Scale="0" />
+          <Property Name="PICTURE" Type="varchar" MaxLength="20" />
+          <Property Name="HOTELCODE" Type="varchar" MaxLength="15" />
+          <Property Name="ID" Type="numeric" Precision="19" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PROFILEID" Type="numeric" Precision="19" Scale="0" />
+          <Property Name="SHIFTID" Type="numeric" Precision="19" Scale="0" />
+          <Property Name="CASHIERID" Type="numeric" Precision="19" Scale="0" />
+          <Property Name="ROLEID" Type="numeric" Precision="19" Scale="0" />
+          <Property Name="REPORTROLEID" Type="numeric" Precision="19" Scale="0" />
+          <Property Name="INACTIVE" Type="numeric" Precision="19" Scale="0" />
+          <Property Name="STARTDATE" Type="datetime" />
+          <Property Name="LEAVEDATE" Type="datetime" />
+          <Property Name="INSURANCE" Type="varchar" MaxLength="15" />
+          <Property Name="DIRECTORY" Type="varchar" MaxLength="256" />
+          <Property Name="BADDNO" Type="numeric" Precision="19" Scale="0" />
+          <Property Name="EADDNO" Type="numeric" Precision="19" Scale="0" />
+          <Property Name="LASTADDNO" Type="numeric" Precision="19" Scale="0" />
+          <Property Name="REPORT_EMAIL" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="CESTURModelStoreContainer">
+          <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CESTURModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="CODE" />
+          </Key>
+          <Property Name="CODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GROUPNO" Type="Decimal" Precision="19" Scale="0" />
+          <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PASSW" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LANG" Type="Decimal" Precision="19" Scale="0" />
+          <Property Name="EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="POP3" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="SMTP" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="EMAILUSER" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="EMAILPASS" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="DELETEONREAD" Type="Decimal" Precision="19" Scale="0" />
+          <Property Name="PICTURE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="HOTELCODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="Decimal" Precision="19" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PROFILEID" Type="Decimal" Precision="19" Scale="0" />
+          <Property Name="SHIFTID" Type="Decimal" Precision="19" Scale="0" />
+          <Property Name="CASHIERID" Type="Decimal" Precision="19" Scale="0" />
+          <Property Name="ROLEID" Type="Decimal" Precision="19" Scale="0" />
+          <Property Name="REPORTROLEID" Type="Decimal" Precision="19" Scale="0" />
+          <Property Name="INACTIVE" Type="Decimal" Precision="19" Scale="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="3" />
+          <Property Name="LEAVEDATE" Type="DateTime" Precision="3" />
+          <Property Name="INSURANCE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="DIRECTORY" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="BADDNO" Type="Decimal" Precision="19" Scale="0" />
+          <Property Name="EADDNO" Type="Decimal" Precision="19" Scale="0" />
+          <Property Name="LASTADDNO" Type="Decimal" Precision="19" Scale="0" />
+          <Property Name="REPORT_EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="CESTUREntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="USERS" EntityType="Self.USER" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CESTURModelStoreContainer" CdmEntityContainer="CESTUREntities">
+          <EntitySetMapping Name="USERS">
+            <EntityTypeMapping TypeName="CESTURModel.USER">
+              <MappingFragment StoreEntitySet="USERS">
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="GROUPNO" ColumnName="GROUPNO" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="PASSW" ColumnName="PASSW" />
+                <ScalarProperty Name="LANG" ColumnName="LANG" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="POP3" ColumnName="POP3" />
+                <ScalarProperty Name="SMTP" ColumnName="SMTP" />
+                <ScalarProperty Name="EMAILUSER" ColumnName="EMAILUSER" />
+                <ScalarProperty Name="EMAILPASS" ColumnName="EMAILPASS" />
+                <ScalarProperty Name="DELETEONREAD" ColumnName="DELETEONREAD" />
+                <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+                <ScalarProperty Name="HOTELCODE" ColumnName="HOTELCODE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PROFILEID" ColumnName="PROFILEID" />
+                <ScalarProperty Name="SHIFTID" ColumnName="SHIFTID" />
+                <ScalarProperty Name="CASHIERID" ColumnName="CASHIERID" />
+                <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+                <ScalarProperty Name="REPORTROLEID" ColumnName="REPORTROLEID" />
+                <ScalarProperty Name="INACTIVE" ColumnName="INACTIVE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="LEAVEDATE" ColumnName="LEAVEDATE" />
+                <ScalarProperty Name="INSURANCE" ColumnName="INSURANCE" />
+                <ScalarProperty Name="DIRECTORY" ColumnName="DIRECTORY" />
+                <ScalarProperty Name="BADDNO" ColumnName="BADDNO" />
+                <ScalarProperty Name="EADDNO" ColumnName="EADDNO" />
+                <ScalarProperty Name="LASTADDNO" ColumnName="LASTADDNO" />
+                <ScalarProperty Name="REPORT_EMAIL" ColumnName="REPORT_EMAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

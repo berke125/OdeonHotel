@@ -1,0 +1,61 @@
+<style>
+  #MainContent {
+    width: 664px;
+    float: left;
+    padding-left: 200px;
+    margin: 0px;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button {
+    background-color: lightskyblue;
+    font-style: normal;
+    font-size: 12pt;
+    font-family: Tahoma;
+    color: brown;
+  }
+
+  mark {
+    background-color: darkblue;
+    color: coral;
+  }
+</style>
+<form class="example-form">
+  <div class="center">
+    <div id="MainContent">
+      <p>CustomerList works.</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>NameSurname</th>
+            <th>Email</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers">
+            <th>{{customer.NameSurname}}</th>
+            <th>{{customer.EMail}}</th>
+            <th>{{customer.Password}}</th>
+            <th><a mat-button color="primary" routerLink="/Sign_Up/{{customer.Id}}">Update</a></th>
+            <th><a mat-button color="primary" (click)="deleteCustomer(customer.Id)">Delete</a></th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</form>
+
+
+
+
+
+
+
+
+

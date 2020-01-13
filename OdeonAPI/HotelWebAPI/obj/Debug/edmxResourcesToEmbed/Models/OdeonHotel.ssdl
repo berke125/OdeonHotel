@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CESTURModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="CODE" />
+    </Key>
+    <Property Name="CODE" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="GROUPNO" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="NAME" Type="varchar" MaxLength="30" />
+    <Property Name="PASSW" Type="varchar" MaxLength="30" />
+    <Property Name="LANG" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="255" />
+    <Property Name="POP3" Type="varchar" MaxLength="128" />
+    <Property Name="SMTP" Type="varchar" MaxLength="128" />
+    <Property Name="EMAILUSER" Type="varchar" MaxLength="80" />
+    <Property Name="EMAILPASS" Type="varchar" MaxLength="25" />
+    <Property Name="DELETEONREAD" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="PICTURE" Type="varchar" MaxLength="20" />
+    <Property Name="HOTELCODE" Type="varchar" MaxLength="15" />
+    <Property Name="ID" Type="numeric" Precision="19" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PROFILEID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="SHIFTID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="CASHIERID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="ROLEID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="REPORTROLEID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="INACTIVE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="STARTDATE" Type="datetime" />
+    <Property Name="LEAVEDATE" Type="datetime" />
+    <Property Name="INSURANCE" Type="varchar" MaxLength="15" />
+    <Property Name="DIRECTORY" Type="varchar" MaxLength="256" />
+    <Property Name="BADDNO" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="EADDNO" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="LASTADDNO" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="REPORT_EMAIL" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityContainer Name="CESTURModelStoreContainer">
+    <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

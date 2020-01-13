@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CESTURModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="CODE" />
+    </Key>
+    <Property Name="CODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GROUPNO" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PASSW" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="LANG" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="POP3" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="SMTP" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="EMAILUSER" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="EMAILPASS" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="DELETEONREAD" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="PICTURE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="HOTELCODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ID" Type="Decimal" Precision="19" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROFILEID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="SHIFTID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="CASHIERID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="ROLEID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="REPORTROLEID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="INACTIVE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="STARTDATE" Type="DateTime" Precision="3" />
+    <Property Name="LEAVEDATE" Type="DateTime" Precision="3" />
+    <Property Name="INSURANCE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DIRECTORY" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="BADDNO" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="EADDNO" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="LASTADDNO" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="REPORT_EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="CESTUREntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="USERS" EntityType="Self.USER" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CESTURModelStoreContainer" CdmEntityContainer="CESTUREntities">
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="CESTURModel.USER">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="GROUPNO" ColumnName="GROUPNO" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PASSW" ColumnName="PASSW" />
+          <ScalarProperty Name="LANG" ColumnName="LANG" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="POP3" ColumnName="POP3" />
+          <ScalarProperty Name="SMTP" ColumnName="SMTP" />
+          <ScalarProperty Name="EMAILUSER" ColumnName="EMAILUSER" />
+          <ScalarProperty Name="EMAILPASS" ColumnName="EMAILPASS" />
+          <ScalarProperty Name="DELETEONREAD" ColumnName="DELETEONREAD" />
+          <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+          <ScalarProperty Name="HOTELCODE" ColumnName="HOTELCODE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PROFILEID" ColumnName="PROFILEID" />
+          <ScalarProperty Name="SHIFTID" ColumnName="SHIFTID" />
+          <ScalarProperty Name="CASHIERID" ColumnName="CASHIERID" />
+          <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+          <ScalarProperty Name="REPORTROLEID" ColumnName="REPORTROLEID" />
+          <ScalarProperty Name="INACTIVE" ColumnName="INACTIVE" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="LEAVEDATE" ColumnName="LEAVEDATE" />
+          <ScalarProperty Name="INSURANCE" ColumnName="INSURANCE" />
+          <ScalarProperty Name="DIRECTORY" ColumnName="DIRECTORY" />
+          <ScalarProperty Name="BADDNO" ColumnName="BADDNO" />
+          <ScalarProperty Name="EADDNO" ColumnName="EADDNO" />
+          <ScalarProperty Name="LASTADDNO" ColumnName="LASTADDNO" />
+          <ScalarProperty Name="REPORT_EMAIL" ColumnName="REPORT_EMAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
