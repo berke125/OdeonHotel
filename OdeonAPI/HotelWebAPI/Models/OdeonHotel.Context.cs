@@ -26,5 +26,6 @@ namespace HotelWebAPI.Models
         }
     
         public virtual DbSet<USER> USERS { get; set; }
+        public virtual DbSet<MUSTERI> MUSTERIs { get; set; }
     }
 }

@@ -1,5 +1,186 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="CESTURModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MUSTERI">
+    <Key>
+      <PropertyRef Name="MUSNO" />
+    </Key>
+    <Property Name="MUSNO" Type="numeric" Precision="19" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PROFILE_LAYOUT" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="PROFILE_TYPE" Type="varchar" MaxLength="40" />
+    <Property Name="ACKOD" Type="varchar" MaxLength="15" />
+    <Property Name="NAME" Type="varchar" MaxLength="120" />
+    <Property Name="EBMUHKOD" Type="varchar" MaxLength="25" />
+    <Property Name="PRMUHKOD" Type="varchar" MaxLength="25" />
+    <Property Name="BNDMUHKOD" Type="varchar" MaxLength="25" />
+    <Property Name="GELIRMUKOD" Type="varchar" MaxLength="25" />
+    <Property Name="CHDMUKOD" Type="varchar" MaxLength="25" />
+    <Property Name="CAPRAZMUKOD" Type="varchar" MaxLength="25" />
+    <Property Name="MUHCURRTYPE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="ACTYPE" Type="varchar" MaxLength="1" />
+    <Property Name="ACMUHTYPE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="ACMARKETCODE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="NATMARKET" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="ACOWNER" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="DEFODATIP" Type="varchar" MaxLength="6" />
+    <Property Name="DEFYATAKTIP" Type="varchar" MaxLength="6" />
+    <Property Name="DEFFROMDATE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="DEFTODATE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="DEFFROMTIME" Type="varchar" MaxLength="14" />
+    <Property Name="DEFTOTIME" Type="varchar" MaxLength="14" />
+    <Property Name="DEFULKEKOD" Type="varchar" MaxLength="5" />
+    <Property Name="DEFDOVIZTUR" Type="varchar" MaxLength="5" />
+    <Property Name="DEFFIYATGRUP" Type="varchar" MaxLength="15" />
+    <Property Name="DEFPANTIP" Type="varchar" MaxLength="6" />
+    <Property Name="DEFCALLED" Type="varchar" MaxLength="10" />
+    <Property Name="POSCREDITTYPE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="POSDISCTYPE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="POSLIMITTYPE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="POSDEFVALUE" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="ACCOUNTID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="POSPRICECOLUMN" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="CITYLEDGER" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="MF_ROW" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="MF_TO" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="MF_PRICECODE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="MF_VOUCHER" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="MF_STAYTYPE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="MF_CONTRACTID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="invalid" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="REMARK" Type="varchar" MaxLength="120" />
+    <Property Name="CONTRACTID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="ALLOTMENT_ID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="MF_FIX" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="SP_CODE" Type="varchar" MaxLength="25" />
+    <Property Name="CALLED" Type="varchar" MaxLength="10" />
+    <Property Name="FIRSTNAME" Type="varchar" MaxLength="20" />
+    <Property Name="LASTNAME" Type="varchar" MaxLength="120" />
+    <Property Name="ADRES" Type="varchar" MaxLength="255" />
+    <Property Name="CITY" Type="varchar" MaxLength="25" />
+    <Property Name="POSTCODE" Type="varchar" MaxLength="20" />
+    <Property Name="TEL1" Type="varchar" MaxLength="25" />
+    <Property Name="TEL2" Type="varchar" MaxLength="25" />
+    <Property Name="TEL3" Type="varchar" MaxLength="25" />
+    <Property Name="FAX" Type="varchar" MaxLength="25" />
+    <Property Name="CARIKOD" Type="varchar" MaxLength="25" />
+    <Property Name="ULKEKOD" Type="varchar" MaxLength="5" />
+    <Property Name="NATION" Type="varchar" MaxLength="5" />
+    <Property Name="MESLEK" Type="varchar" MaxLength="120" />
+    <Property Name="PLAKA" Type="varchar" MaxLength="15" />
+    <Property Name="DOGUMYER" Type="varchar" MaxLength="25" />
+    <Property Name="DOGUMTARIH" Type="datetime" />
+    <Property Name="BABA" Type="varchar" MaxLength="20" />
+    <Property Name="KIMTUR" Type="varchar" MaxLength="1" />
+    <Property Name="KIMNO" Type="varchar" MaxLength="15" />
+    <Property Name="KIMYER" Type="varchar" MaxLength="25" />
+    <Property Name="KIMTARIH" Type="datetime" />
+    <Property Name="MUSTYPE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="OLDCLIENT" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="CINSIYET" Type="varchar" MaxLength="1" />
+    <Property Name="MEDENI" Type="varchar" MaxLength="1" />
+    <Property Name="VNO" Type="varchar" MaxLength="25" />
+    <Property Name="VDAIRE" Type="varchar" MaxLength="25" />
+    <Property Name="HOTELCODE" Type="varchar" MaxLength="15" />
+    <Property Name="UPDATEDATE" Type="datetime" />
+    <Property Name="SPECCODE1" Type="varchar" MaxLength="25" />
+    <Property Name="SPECCODE2" Type="varchar" MaxLength="25" />
+    <Property Name="BOOKNO" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="PRESTAY" Type="varchar" MaxLength="250" />
+    <Property Name="ENTERPRISEID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="IDENTITYCITY" Type="varchar" MaxLength="25" />
+    <Property Name="IDENTITYDISTRICT" Type="varchar" MaxLength="25" />
+    <Property Name="IDENTITYTOWN" Type="varchar" MaxLength="25" />
+    <Property Name="IDENTITYVOLUME" Type="varchar" MaxLength="25" />
+    <Property Name="IDENTITYORDER" Type="varchar" MaxLength="25" />
+    <Property Name="IDENTITYFAMILYORDER" Type="varchar" MaxLength="25" />
+    <Property Name="IDENTITYSERI" Type="varchar" MaxLength="25" />
+    <Property Name="ICITY" Type="varchar" MaxLength="25" />
+    <Property Name="ENTERPRISEDID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="ITOWN" Type="varchar" MaxLength="25" />
+    <Property Name="IDISTRICT" Type="varchar" MaxLength="25" />
+    <Property Name="IVOLUME" Type="varchar" MaxLength="25" />
+    <Property Name="IORDER" Type="varchar" MaxLength="25" />
+    <Property Name="IFAMILYORDER" Type="varchar" MaxLength="25" />
+    <Property Name="ISERI" Type="varchar" MaxLength="25" />
+    <Property Name="MOTHER" Type="varchar" MaxLength="25" />
+    <Property Name="CHECKOUT" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="PARENTTYPE" Type="varchar" MaxLength="20" />
+    <Property Name="FAVORITE_ROOM" Type="varchar" MaxLength="8" />
+    <Property Name="LANGUAGE" Type="varchar" MaxLength="15" />
+    <Property Name="PARENTID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="HISTORY" Type="text" />
+    <Property Name="COMPANYID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="BLACKLIST" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="BLACKLIST_REASON" Type="varchar" MaxLength="50" />
+    <Property Name="MARRIAGE_DATE" Type="datetime" />
+    <Property Name="IDDISTRICT" Type="varchar" MaxLength="25" />
+    <Property Name="TRANSFER_LOCK" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="CLUB_CARD_ID" Type="varchar" MaxLength="32" />
+    <Property Name="INACTIVE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="ARNUMBER" Type="varchar" MaxLength="15" />
+    <Property Name="SALESAGENT" Type="varchar" MaxLength="30" />
+    <Property Name="EMPLOYEES" Type="varchar" MaxLength="30" />
+    <Property Name="REVPOTROOM" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="REVPOTCATERING" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="INDUSTRYCODE" Type="varchar" MaxLength="80" />
+    <Property Name="COMPETITION" Type="varchar" MaxLength="80" />
+    <Property Name="ACTIONCODE" Type="varchar" MaxLength="80" />
+    <Property Name="PREFERENCES" Type="varchar" MaxLength="80" />
+    <Property Name="TACOMMISSION" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="DISPLAY" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="PREROOM" Type="varchar" MaxLength="80" />
+    <Property Name="PRECATEGORY" Type="varchar" MaxLength="80" />
+    <Property Name="departments" Type="varchar" MaxLength="500" />
+    <Property Name="EDUCATION" Type="varchar" MaxLength="15" />
+    <Property Name="INFLUENCE" Type="varchar" MaxLength="15" />
+    <Property Name="NOMAIL" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="NOSMS" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="MF_FROM" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="CREDITLIMIT" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="LASTSTATEMENT" Type="datetime" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="CREATEDBY" Type="varchar" MaxLength="16" />
+    <Property Name="UPDATEBY" Type="varchar" MaxLength="16" />
+    <Property Name="BO_PAYMENT_CURRENCY" Type="varchar" MaxLength="5" />
+    <Property Name="POSCARDID" Type="varchar" MaxLength="40" />
+    <Property Name="DEFCHANNEL" Type="varchar" MaxLength="25" />
+    <Property Name="DEFSTAYTYPE" Type="int" />
+    <Property Name="DEFSTATUS" Type="int" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="50" />
+    <Property Name="CONTACTNAME" Type="varchar" MaxLength="50" />
+    <Property Name="ORIGINCITY" Type="varchar" MaxLength="50" />
+    <Property Name="SCHOOL" Type="varchar" MaxLength="50" />
+    <Property Name="SCHOOLDEPARTMENT" Type="varchar" MaxLength="50" />
+    <Property Name="SCHOOLCLASS" Type="varchar" MaxLength="5" />
+    <Property Name="MIDNAME" Type="varchar" MaxLength="50" />
+    <Property Name="SMOKING" Type="varchar" MaxLength="5" />
+    <Property Name="CONTACTEMAIL" Type="varchar" MaxLength="50" />
+    <Property Name="CONTACTADDRESS" Type="varchar" MaxLength="150" />
+    <Property Name="SUMMERPREF" Type="varchar" MaxLength="5" />
+    <Property Name="STUDENTPERIOD" Type="varchar" MaxLength="50" />
+    <Property Name="BO_PAYMENT_CURR" Type="varchar" MaxLength="5" />
+    <Property Name="SCHOOL_TYPE" Type="varchar" MaxLength="5" />
+    <Property Name="CONTACT_TCNO" Type="nvarchar" MaxLength="15" />
+    <Property Name="CONTACT_PPNO" Type="nvarchar" MaxLength="15" />
+    <Property Name="CONTACT_RELATION" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONTACT_COUNTRY" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONTACT_CITY" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONTACT_TOWN" Type="nvarchar" MaxLength="50" />
+    <Property Name="ACOOUNTID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="CHN_CODE" Type="varchar" MaxLength="40" />
+    <Property Name="STUDENTREMARK" Type="nvarchar" MaxLength="100" />
+    <Property Name="CONTACT_JOB" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONTACT_JOBADDRESS" Type="nvarchar" MaxLength="100" />
+    <Property Name="MAJORDISEASES" Type="nvarchar" MaxLength="100" />
+    <Property Name="ADDRESS_TOWN" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONTACT_SOCIAL_SECURITY" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONTACT_1_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONTACT_1_RELATION" Type="nvarchar" MaxLength="50" />
+    <Property Name="CONTACT_1_TEL" Type="nvarchar" MaxLength="25" />
+    <Property Name="CRM_DISTRICT" Type="varchar" MaxLength="40" />
+    <Property Name="CRM_CATEGORY" Type="varchar" MaxLength="40" />
+    <Property Name="PROFILE_PUBLIC" Type="int" />
+  </EntityType>
   <EntityType Name="USERS">
     <Key>
       <PropertyRef Name="CODE" />
@@ -34,6 +215,7 @@
     <Property Name="REPORT_EMAIL" Type="varchar" MaxLength="255" />
   </EntityType>
   <EntityContainer Name="CESTURModelStoreContainer">
+    <EntitySet Name="MUSTERI" EntityType="Self.MUSTERI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

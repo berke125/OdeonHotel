@@ -26,11 +26,11 @@
   }
 
   .spacer {
-    flex: 0.02;
+    flex: 0.015;
   }
 
   .example-spacer {
-    flex: 0.4;
+    flex: 0.5;
   }
 
   .example-spacer2 {
@@ -136,8 +136,8 @@
     <span style="color:coral">Odeon</span>
     <div class="spacer"></div>
     <div>
-      {{myDate | date:'dd MMMM yyyy'}}
-      {{mydate2 | date: ' HH:mm:ss'}}
+      {{myDate  | date:'dd MMMM yyyy'}}
+      {{mydate2 | date:'HH:mm:ss'}}
     </div>
     <span class="example-spacer"></span>
     <h4 style="text-align:center" *ngIf="title2!=''">

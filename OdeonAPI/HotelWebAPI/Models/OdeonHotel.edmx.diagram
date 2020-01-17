@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="da1f21d265494ee3a09c5a9c6cc0efed" Name="Diagram1" ZoomLevel="99">
         <EntityTypeShape EntityType="CESTURModel.USER" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CESTURModel.MUSTERI" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

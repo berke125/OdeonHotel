@@ -35,5 +35,187 @@
   </EntityType>
   <EntityContainer Name="CESTUREntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="USERS" EntityType="Self.USER" />
+    <EntitySet Name="MUSTERIs" EntityType="CESTURModel.MUSTERI" />
   </EntityContainer>
+  <EntityType Name="MUSTERI">
+    <Key>
+      <PropertyRef Name="MUSNO" />
+    </Key>
+    <Property Name="MUSNO" Type="Decimal" Nullable="false" Precision="19" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROFILE_LAYOUT" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="PROFILE_TYPE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ACKOD" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="EBMUHKOD" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PRMUHKOD" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="BNDMUHKOD" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="GELIRMUKOD" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="CHDMUKOD" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="CAPRAZMUKOD" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="MUHCURRTYPE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="ACTYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ACMUHTYPE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="ACMARKETCODE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="NATMARKET" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="ACOWNER" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="DEFODATIP" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="DEFYATAKTIP" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="DEFFROMDATE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="DEFTODATE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="DEFFROMTIME" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="DEFTOTIME" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="DEFULKEKOD" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="DEFDOVIZTUR" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="DEFFIYATGRUP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DEFPANTIP" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="DEFCALLED" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="POSCREDITTYPE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="POSDISCTYPE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="POSLIMITTYPE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="POSDEFVALUE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ACCOUNTID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="POSPRICECOLUMN" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="CITYLEDGER" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="MF_ROW" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="MF_TO" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="MF_PRICECODE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="MF_VOUCHER" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="MF_STAYTYPE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="MF_CONTRACTID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="invalid" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="REMARK" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="CONTRACTID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="ALLOTMENT_ID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="MF_FIX" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="SP_CODE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="CALLED" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FIRSTNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LASTNAME" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="ADRES" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="POSTCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TEL1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="TEL2" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="TEL3" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="FAX" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="CARIKOD" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ULKEKOD" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="NATION" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="MESLEK" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="PLAKA" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DOGUMYER" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="DOGUMTARIH" Type="DateTime" Precision="3" />
+    <Property Name="BABA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="KIMTUR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="KIMNO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="KIMYER" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="KIMTARIH" Type="DateTime" Precision="3" />
+    <Property Name="MUSTYPE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="OLDCLIENT" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="CINSIYET" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="MEDENI" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="VNO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="VDAIRE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="HOTELCODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="UPDATEDATE" Type="DateTime" Precision="3" />
+    <Property Name="SPECCODE1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="SPECCODE2" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="BOOKNO" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="PRESTAY" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ENTERPRISEID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="IDENTITYCITY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="IDENTITYDISTRICT" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="IDENTITYTOWN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="IDENTITYVOLUME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="IDENTITYORDER" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="IDENTITYFAMILYORDER" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="IDENTITYSERI" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ICITY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ENTERPRISEDID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="ITOWN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="IDISTRICT" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="IVOLUME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="IORDER" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="IFAMILYORDER" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ISERI" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="MOTHER" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="CHECKOUT" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="PARENTTYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FAVORITE_ROOM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="LANGUAGE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PARENTID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="HISTORY" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="COMPANYID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="BLACKLIST" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="BLACKLIST_REASON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MARRIAGE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="IDDISTRICT" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="TRANSFER_LOCK" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="CLUB_CARD_ID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="INACTIVE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="ARNUMBER" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SALESAGENT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EMPLOYEES" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="REVPOTROOM" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="REVPOTCATERING" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="INDUSTRYCODE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="COMPETITION" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ACTIONCODE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="PREFERENCES" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="TACOMMISSION" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="DISPLAY" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="PREROOM" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="PRECATEGORY" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="departments" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="EDUCATION" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="INFLUENCE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="NOMAIL" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="NOSMS" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="MF_FROM" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="CREDITLIMIT" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="LASTSTATEMENT" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="UPDATEBY" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="BO_PAYMENT_CURRENCY" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="POSCARDID" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="DEFCHANNEL" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="DEFSTAYTYPE" Type="Int32" />
+    <Property Name="DEFSTATUS" Type="Int32" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ORIGINCITY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SCHOOL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SCHOOLDEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SCHOOLCLASS" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="MIDNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SMOKING" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACTEMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACTADDRESS" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="SUMMERPREF" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="STUDENTPERIOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BO_PAYMENT_CURR" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="SCHOOL_TYPE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACT_TCNO" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_PPNO" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_RELATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_COUNTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_TOWN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ACOOUNTID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="CHN_CODE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="STUDENTREMARK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_JOB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_JOBADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MAJORDISEASES" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS_TOWN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_SOCIAL_SECURITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_1_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_1_RELATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_1_TEL" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="CRM_DISTRICT" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="CRM_CATEGORY" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="PROFILE_PUBLIC" Type="Int32" />
+  </EntityType>
 </Schema>

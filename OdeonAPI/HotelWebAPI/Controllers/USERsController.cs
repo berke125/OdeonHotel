@@ -17,109 +17,29 @@ namespace HotelWebAPI.Controllers
     public class USERsController : ApiController
     {
         private CESTUREntities db = new CESTUREntities();
-
-        // GET: api/Customer
-        public List<USER> GetUsers()
+        public UserPoco GetLogin(string code, string password)
         {
-            return db.USERS.ToList();
-        }
-
-        //GET: api/Customer/{id}
-        public USER GetUsersbyCode(string code)
-        {
-            var searchingCode = db.USERS.FirstOrDefault(e => e.CODE == code);
-            if (searchingCode == null)
-                return new USER();
+            var userdb = db.USERS.FirstOrDefault(e => e.CODE == code && e.PASSW == password);
+            if (userdb == null)
+                return new UserPoco { IsLogin=false };
             else
-                return searchingCode;
-
-        }
-
-        //public USER GetCustomersbyEMail(string email)
-        //{
-        //    try
-        //    {
-        //        return db.USERS.FirstOrDefault(e => e.EMAIL == email);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return null;
-        //    }
-
-        //}
-        public USER GetLogin(string code, string password)
-        {
-            var user = db.USERS.FirstOrDefault(e => e.CODE == code && e.PASSW == password);
-            if (user == null)
-                return new USER();
-            else
-                return user;
-        }
-
-        // PUT: api/Customer/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutUser(string code, USER user)
-        {
-
-
-            if (code != user.CODE)
             {
-                return BadRequest();
-            }
-
-            db.Entry(user).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CustomerExists(code))
+                UserPoco userpoco = new UserPoco
                 {
-                    return NotFound();
-                }
-                else
+                    IsLogin = true,
+                    LoginTime = DateTime.Now,
+                    Code = userdb.CODE,
+                    ProfileId = Convert.ToInt32(userdb.PROFILEID),                   
+                };
+                var musteridb = db.MUSTERIs.FirstOrDefault(e => e.MUSNO == userpoco.ProfileId);
+                if(musteridb!=null)
                 {
-                    throw;
+                    userpoco.FirstName = musteridb.FIRSTNAME;
+                    userpoco.LastName = musteridb.LASTNAME;
                 }
+                return userpoco;
             }
-
-            return StatusCode(HttpStatusCode.NoContent);
         }
-
-        // POST: api/Customer
-        [ResponseType(typeof(USER))]
-        public IHttpActionResult PostUser(USER user)
-        {
-            USER old = null;
-            old = GetUsersbyCode(user.CODE);
-
-            if (old == null)
-            {
-                db.USERS.Add(user);
-                db.SaveChanges();
-            }
-
-            return CreatedAtRoute("DefaultApi", new { code = user.CODE }, user);
-        }
-
-        // DELETE: api/Customer/5
-        [ResponseType(typeof(USER))]
-        public IHttpActionResult DeleteUser(string code)
-        {
-            USER user = db.USERS.Find(code);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            db.USERS.Remove(user);
-            db.SaveChanges();
-
-            return Ok(user);
-        }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)

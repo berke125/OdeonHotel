@@ -15,7 +15,9 @@
   .spacer {
     margin-bottom: 20px;
   }
-
+  .example-spacer {
+    padding-left:500px;
+  }
   .mat-raised-button {
     background-color: blue;
     font-style: normal;
@@ -41,16 +43,16 @@
 <form #form="ngForm" autocomplete="off" class="example-form">
   <div class="center">
     <div id="MainContent">
-      <label>E-Posta:</label>
+      <label>İsim giriniz:</label>
       <mat-form-field class="example-full-width">
-        <input name=aEmail #aEmail="ngModel" [(ngModel)]="email" matInput type="text" required>
-        <div class="validation-error" *ngIf="aEmail.invalid && (aEmail.dirty || aEmail.touched)">
+        <input name=aCode #aCode="ngModel" [(ngModel)]="code" matInput type="text" required>
+        <div class="validation-error" *ngIf="aCode.invalid && (aCode.dirty || aCode.touched)">
           This field is required.
 
         </div>
       </mat-form-field>
       <br />
-      <label>Şifre:</label>
+      <label>Şifre giriniz:</label>
       <mat-form-field class="example-full-width">
         <input name=aPassword #aPassword="ngModel" [(ngModel)]="password" matInput type="password" required>
         <div class="validation-error" *ngIf="aPassword.invalid && aPassword.touched">This field is required.</div>
@@ -58,11 +60,11 @@
       <br />
       <button class="button" mat-button routerLink="/Forgotten_Password">Forgot your password?</button>
       <div class="spacer"></div>
-      <div class="example-button-row">
-        <button mat-raised-button [disabled]="form.invalid" (click)="login()">Login</button>
-
-        <button mat-raised-button routerLink="/Home">Cancel</button>
-      </div>
+      <button mat-raised-button [disabled]="form.invalid" (click)="login()">Login</button>
+      <button mat-raised-button routerLink="/Home">Cancel</button>
     </div>
+    
+
+    
   </div>
 </form>

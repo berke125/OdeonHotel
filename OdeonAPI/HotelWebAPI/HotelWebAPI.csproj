@@ -37,6 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <IncludeIisSettings>true</IncludeIisSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -196,6 +197,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HotelDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\MUSTERI.cs">
+      <DependentUpon>OdeonHotel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\OdeonHotel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -214,6 +218,7 @@
     <Compile Include="Models\USER.cs">
       <DependentUpon>OdeonHotel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserPoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
