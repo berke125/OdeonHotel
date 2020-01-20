@@ -215,6 +215,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OdeonHotel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\RoomPoco.cs" />
+    <Compile Include="Models\ROOMVIEW.cs">
+      <DependentUpon>OdeonHotel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\USER.cs">
       <DependentUpon>OdeonHotel.tt</DependentUpon>
     </Compile>

@@ -141,7 +141,7 @@
     </div>
     <span class="example-spacer"></span>
     <h4 style="text-align:center" *ngIf="title2!=''">
-      {{title}} {{title2.NameSurname}}
+      {{title}} {{title2.FirstName}} {{title2.LastName}}
     </h4>
     <span class="example-spacer2"></span>
     <div>
@@ -175,7 +175,7 @@
         <a mat-button>Reservations</a>
       </li>
       <li *ngIf="customerService.LoggedIn()">
-        <a mat-button>Room Status </a>
+        <a mat-button routerLink="/RoomList">Room Status </a>
       </li>
     </ul>
   </mat-sidenav>
@@ -189,7 +189,7 @@
 <!-- Footer -->
 <footer class="page-footer" style="color:coral">
   <div class="footer-copyright text-center py-3">
-    {{myDate | date:'yyyy'}} Odeon: A Hotel Page
+    © {{myDate | date:'yyyy'}} Odeon
   </div>
 </footer>
 <!-- Footer -->

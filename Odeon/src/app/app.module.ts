@@ -18,6 +18,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { CustomerListComponent } from './CustomerList/CustomerList.component';
 import { ForgottenPasswordComponent } from './Forgotten_Password/Forgotten_Password.component';
 import { ChangePasswordComponent } from './Change_Password/Change_Password.component';
+import { RoomListComponent } from './Rooms/RoomList.component';
 
 
 @NgModule({
@@ -29,8 +30,8 @@ import { ChangePasswordComponent } from './Change_Password/Change_Password.compo
     WelcomeComponent,
     CustomerListComponent,
     ForgottenPasswordComponent,
-    ChangePasswordComponent
-
+    ChangePasswordComponent,
+    RoomListComponent
 
   ],
   imports: [

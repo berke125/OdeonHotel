@@ -4,6 +4,7 @@ import { Customer } from '../shared/customer.model';
 import { CustomerService } from '../shared/customer.service';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import { UserService } from '../shared/USER.service';
 @Component({
   selector: 'CustomerList-root',
   templateUrl: './CustomerList.component.html'
@@ -11,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 export class CustomerListComponent implements OnInit {
   cusId: number;
   customers: any;
-  constructor(private service: CustomerService, http: HttpClient, private toastr: ToastrService) {
+  constructor(private service: CustomerService, http: HttpClient, private toastr: ToastrService, private userService: UserService) {
 
   }
   refreshList() {
@@ -21,16 +22,7 @@ export class CustomerListComponent implements OnInit {
   ngOnInit() {
     this.refreshList();
   }
-  deleteCustomer(id: number) {
-    if (confirm('Are you sure want to delete this record ?') == true) {
-      this.service.DeleteCustomer(id).subscribe(x => {
-        this.refreshList();
-        this.toastr.warning("Deleted Successfully");
-
-
-      })
-    }
-  }
+ 
 
 
 }

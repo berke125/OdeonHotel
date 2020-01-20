@@ -15,10 +15,10 @@ export class Sign_InComponent {
   isLoggedin = false;
   login() {
     var login = this.service.GetLogin(this.code, this.password).subscribe((user: any) => {
-      if (user.code != null) {
+      if (user.Code != null) {
 
         this.isLoggedin = true;
-        alert('Başarıyla giriş yaptınız.' + user.CODE);
+        alert('Başarıyla giriş yaptınız.' + user.FirstName +' '+user.LastName);
         localStorage.setItem('User', JSON.stringify(user));
         this.service.USER = user;
         location.reload();

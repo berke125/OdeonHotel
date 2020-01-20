@@ -24,4 +24,5 @@ export class UserService
     localStorage.removeItem('User')
     this.router.navigateByUrl('/Home')
   }
+
 }
