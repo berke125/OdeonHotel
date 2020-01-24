@@ -217,5 +217,163 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ROOMVIEWs">
+      <EntityTypeMapping TypeName="CESTURModel.ROOMVIEW">
+        <MappingFragment StoreEntitySet="ROOMVIEW">
+          <ScalarProperty Name="OO" ColumnName="OO" />
+          <ScalarProperty Name="DIRTY" ColumnName="DIRTY" />
+          <ScalarProperty Name="C_CIN_BABY" ColumnName="_CIN_BABY" />
+          <ScalarProperty Name="C_CIN_CHD2" ColumnName="_CIN_CHD2" />
+          <ScalarProperty Name="C_CIN_CHD1" ColumnName="_CIN_CHD1" />
+          <ScalarProperty Name="C_CIN_EXTRA" ColumnName="_CIN_EXTRA" />
+          <ScalarProperty Name="C_CIN_PAX" ColumnName="_CIN_PAX" />
+          <ScalarProperty Name="C_CIN_FIRSTNAME" ColumnName="_CIN_FIRSTNAME" />
+          <ScalarProperty Name="C_CIN_LASTNAME" ColumnName="_CIN_LASTNAME" />
+          <ScalarProperty Name="C_CIN_VIPTEXT" ColumnName="_CIN_VIPTEXT" />
+          <ScalarProperty Name="C_CIN_FROMTIME" ColumnName="_CIN_FROMTIME" />
+          <ScalarProperty Name="C_CIN_REGNO" ColumnName="_CIN_REGNO" />
+          <ScalarProperty Name="C_COUT_TOTIME" ColumnName="_COUT_TOTIME" />
+          <ScalarProperty Name="MARKET" ColumnName="MARKET" />
+          <ScalarProperty Name="SHARESLAVE" ColumnName="SHARESLAVE" />
+          <ScalarProperty Name="SHAREMASTER" ColumnName="SHAREMASTER" />
+          <ScalarProperty Name="SHAREID" ColumnName="SHAREID" />
+          <ScalarProperty Name="HKEEPCOLOR" ColumnName="HKEEPCOLOR" />
+          <ScalarProperty Name="PAX_INFO" ColumnName="PAX_INFO" />
+          <ScalarProperty Name="ACKOD" ColumnName="ACKOD" />
+          <ScalarProperty Name="REGNO" ColumnName="REGNO" />
+          <ScalarProperty Name="MARKETCODE" ColumnName="MARKETCODE" />
+          <ScalarProperty Name="SIDEBY" ColumnName="SIDEBY" />
+          <ScalarProperty Name="PROFILEID" ColumnName="PROFILEID" />
+          <ScalarProperty Name="ROOM_FEATURES" ColumnName="ROOM_FEATURES" />
+          <ScalarProperty Name="NIGHT" ColumnName="NIGHT" />
+          <ScalarProperty Name="INVOICEID" ColumnName="INVOICEID" />
+          <ScalarProperty Name="BALANCE" ColumnName="BALANCE" />
+          <ScalarProperty Name="ACCOUNTTYPE" ColumnName="ACCOUNTTYPE" />
+          <ScalarProperty Name="GROUPNAME" ColumnName="GROUPNAME" />
+          <ScalarProperty Name="ALLOTMENT_NAME" ColumnName="ALLOTMENT_NAME" />
+          <ScalarProperty Name="ALLOTMENT_ID" ColumnName="ALLOTMENT_ID" />
+          <ScalarProperty Name="CONTRACT_NAME" ColumnName="CONTRACT_NAME" />
+          <ScalarProperty Name="EXCLUDE_ALLOTMENT" ColumnName="EXCLUDE_ALLOTMENT" />
+          <ScalarProperty Name="DEFINITE" ColumnName="DEFINITE" />
+          <ScalarProperty Name="EXTERNAL_REMARK" ColumnName="EXTERNAL_REMARK" />
+          <ScalarProperty Name="EXTERNAL_SOURCE" ColumnName="EXTERNAL_SOURCE" />
+          <ScalarProperty Name="EXTERNAL_IDENTIFIER" ColumnName="EXTERNAL_IDENTIFIER" />
+          <ScalarProperty Name="OCLIENTSTATUS" ColumnName="OCLIENTSTATUS" />
+          <ScalarProperty Name="SHADOW" ColumnName="SHADOW" />
+          <ScalarProperty Name="RESERVATIONCHANNEL" ColumnName="RESERVATIONCHANNEL" />
+          <ScalarProperty Name="STAYTYPE" ColumnName="STAYTYPE" />
+          <ScalarProperty Name="WAITREMARK" ColumnName="WAITREMARK" />
+          <ScalarProperty Name="WAITEND" ColumnName="WAITEND" />
+          <ScalarProperty Name="WAITSTART" ColumnName="WAITSTART" />
+          <ScalarProperty Name="WAITLIST" ColumnName="WAITLIST" />
+          <ScalarProperty Name="LOCKREMARK_" ColumnName="LOCKREMARK_" />
+          <ScalarProperty Name="LOCKUSER_" ColumnName="LOCKUSER_" />
+          <ScalarProperty Name="LOCK_" ColumnName="LOCK_" />
+          <ScalarProperty Name="STAY" ColumnName="STAY" />
+          <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+          <ScalarProperty Name="VIPSTATUS" ColumnName="VIPSTATUS" />
+          <ScalarProperty Name="VIPTEXT" ColumnName="VIPTEXT" />
+          <ScalarProperty Name="VOCHER" ColumnName="VOCHER" />
+          <ScalarProperty Name="CANCELDATE" ColumnName="CANCELDATE" />
+          <ScalarProperty Name="GOSHOW" ColumnName="GOSHOW" />
+          <ScalarProperty Name="ANLASMANO" ColumnName="ANLASMANO" />
+          <ScalarProperty Name="HOTELCODE" ColumnName="HOTELCODE" />
+          <ScalarProperty Name="REMARKREASON" ColumnName="REMARKREASON" />
+          <ScalarProperty Name="STATUS_INFO" ColumnName="STATUS_INFO" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="BABY" ColumnName="BABY" />
+          <ScalarProperty Name="FREECHD2" ColumnName="FREECHD2" />
+          <ScalarProperty Name="CHD2" ColumnName="CHD2" />
+          <ScalarProperty Name="FREECHD1" ColumnName="FREECHD1" />
+          <ScalarProperty Name="CHD1" ColumnName="CHD1" />
+          <ScalarProperty Name="EXTRA2" ColumnName="EXTRA2" />
+          <ScalarProperty Name="EXTRA" ColumnName="EXTRA" />
+          <ScalarProperty Name="PAX" ColumnName="PAX" />
+          <ScalarProperty Name="NROOM" ColumnName="NROOM" />
+          <ScalarProperty Name="SAFEKEY" ColumnName="SAFEKEY" />
+          <ScalarProperty Name="SCODE2" ColumnName="SCODE2" />
+          <ScalarProperty Name="SCODE1" ColumnName="SCODE1" />
+          <ScalarProperty Name="NATION" ColumnName="NATION" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="PCODE" ColumnName="PCODE" />
+          <ScalarProperty Name="BOARD" ColumnName="BOARD" />
+          <ScalarProperty Name="LASTNAME2" ColumnName="LASTNAME2" />
+          <ScalarProperty Name="FIRSTNAME2" ColumnName="FIRSTNAME2" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+          <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="OPT" ColumnName="OPT" />
+          <ScalarProperty Name="RELEASE" ColumnName="RELEASE" />
+          <ScalarProperty Name="GRUPNO" ColumnName="GRUPNO" />
+          <ScalarProperty Name="GROUPID" ColumnName="GROUPID" />
+          <ScalarProperty Name="AGENCY_SP_CODE" ColumnName="AGENCY_SP_CODE" />
+          <ScalarProperty Name="AGENCY" ColumnName="AGENCY" />
+          <ScalarProperty Name="LEAVETIME" ColumnName="LEAVETIME" />
+          <ScalarProperty Name="TOTIME" ColumnName="TOTIME" />
+          <ScalarProperty Name="TODATE" ColumnName="TODATE" />
+          <ScalarProperty Name="FROMTIME" ColumnName="FROMTIME" />
+          <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+          <ScalarProperty Name="RECDATE" ColumnName="RECDATE" />
+          <ScalarProperty Name="FROMDATE" ColumnName="FROMDATE" />
+          <ScalarProperty Name="BED" ColumnName="BED" />
+          <ScalarProperty Name="RES_ROOM_TYPE" ColumnName="RES_ROOM_TYPE" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="ROOM" ColumnName="ROOM" />
+          <ScalarProperty Name="NO" ColumnName="NO" />
+          <ScalarProperty Name="CHDTOTAL" ColumnName="CHDTOTAL" />
+          <ScalarProperty Name="SOLD" ColumnName="SOLD" />
+          <ScalarProperty Name="FLOOR" ColumnName="FLOOR" />
+          <ScalarProperty Name="ROOMCOLOR" ColumnName="ROOMCOLOR" />
+          <ScalarProperty Name="FONTCOLOR" ColumnName="FONTCOLOR" />
+          <ScalarProperty Name="BLOKE" ColumnName="BLOKE" />
+          <ScalarProperty Name="ARIZALI" ColumnName="ARIZALI" />
+          <ScalarProperty Name="KIRLI" ColumnName="KIRLI" />
+          <ScalarProperty Name="EVENT_SUBJECT" ColumnName="EVENT_SUBJECT" />
+          <ScalarProperty Name="YATAKTIP" ColumnName="YATAKTIP" />
+          <ScalarProperty Name="ODATIP" ColumnName="ODATIP" />
+          <ScalarProperty Name="ODANO" ColumnName="ODANO" />
+          <ScalarProperty Name="REGNO_IN" ColumnName="REGNO_IN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ODAs">
+      <EntityTypeMapping TypeName="CESTURModel.ODA">
+        <MappingFragment StoreEntitySet="ODA">
+          <ScalarProperty Name="RoomGroup" ColumnName="RoomGroup" />
+          <ScalarProperty Name="IsRoom" ColumnName="IsRoom" />
+          <ScalarProperty Name="RECORDDATE" ColumnName="RECORDDATE" />
+          <ScalarProperty Name="BLOCK" ColumnName="BLOCK" />
+          <ScalarProperty Name="FEATURES" ColumnName="FEATURES" />
+          <ScalarProperty Name="STATION" ColumnName="STATION" />
+          <ScalarProperty Name="STATIONID" ColumnName="STATIONID" />
+          <ScalarProperty Name="SOLD" ColumnName="SOLD" />
+          <ScalarProperty Name="HOTELCODE" ColumnName="HOTELCODE" />
+          <ScalarProperty Name="HKEEP" ColumnName="HKEEP" />
+          <ScalarProperty Name="PROP" ColumnName="PROP" />
+          <ScalarProperty Name="INKAPASITE" ColumnName="INKAPASITE" />
+          <ScalarProperty Name="RENK" ColumnName="RENK" />
+          <ScalarProperty Name="KAT" ColumnName="KAT" />
+          <ScalarProperty Name="RESER2" ColumnName="RESER2" />
+          <ScalarProperty Name="RESER1" ColumnName="RESER1" />
+          <ScalarProperty Name="BLOKEREM" ColumnName="BLOKEREM" />
+          <ScalarProperty Name="BLOKE" ColumnName="BLOKE" />
+          <ScalarProperty Name="ARIZALI" ColumnName="ARIZALI" />
+          <ScalarProperty Name="KIRLI" ColumnName="KIRLI" />
+          <ScalarProperty Name="REGNO" ColumnName="REGNO" />
+          <ScalarProperty Name="CAPACITY" ColumnName="CAPACITY" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="YATAKTIP" ColumnName="YATAKTIP" />
+          <ScalarProperty Name="ODATIP" ColumnName="ODATIP" />
+          <ScalarProperty Name="BACK" ColumnName="BACK" />
+          <ScalarProperty Name="NFRONT" ColumnName="NFRONT" />
+          <ScalarProperty Name="NRIGHT" ColumnName="NRIGHT" />
+          <ScalarProperty Name="NLEFT" ColumnName="NLEFT" />
+          <ScalarProperty Name="ROOM_ORDER" ColumnName="ROOM_ORDER" />
+          <ScalarProperty Name="ODANO" ColumnName="ODANO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

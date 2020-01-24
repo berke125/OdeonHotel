@@ -24,5 +24,9 @@ export class UserService
     localStorage.removeItem('User')
     this.router.navigateByUrl('/Home')
   }
-
+  GetRoom()
+  {
+    //return this._http.get<any>(this.rootURL + '/USERS?oda_no=' + oda_no);
+    return this._http.get(this.rootURL + '/RoomView');
+  }
 }

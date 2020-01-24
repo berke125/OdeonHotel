@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CESTUR" Class="dbLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.10.10.18;Initial Catalog=CESTUR;User ID=sa;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CESTURConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.USERS" Member="USERS">
+    <Type Name="USERS">
+      <Column Name="CODE" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GROUPNO" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PASSW" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="LANG" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="POP3" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="SMTP" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="EMAILUSER" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="EMAILPASS" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="DELETEONREAD" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="PICTURE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="HOTELCODE" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Decimal" DbType="Decimal(19,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PROFILEID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="SHIFTID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="CASHIERID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="ROLEID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="REPORTROLEID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="INACTIVE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="STARTDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LEAVEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="INSURANCE" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="DIRECTORY" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="BADDNO" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="EADDNO" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="LASTADDNO" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="REPORT_EMAIL" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MUSTERI" Member="MUSTERI">
+    <Type Name="MUSTERI">
+      <Column Name="MUSNO" Type="System.Decimal" DbType="Decimal(19,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PROFILE_LAYOUT" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="PROFILE_TYPE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="ACKOD" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="EBMUHKOD" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="PRMUHKOD" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="BNDMUHKOD" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="GELIRMUKOD" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="CHDMUKOD" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="CAPRAZMUKOD" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="MUHCURRTYPE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="ACTYPE" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="ACMUHTYPE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="ACMARKETCODE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="NATMARKET" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="ACOWNER" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="DEFODATIP" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="DEFYATAKTIP" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="DEFFROMDATE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="DEFTODATE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="DEFFROMTIME" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="DEFTOTIME" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="DEFULKEKOD" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="DEFDOVIZTUR" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="DEFFIYATGRUP" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="DEFPANTIP" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="DEFCALLED" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="POSCREDITTYPE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="POSDISCTYPE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="POSLIMITTYPE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="POSDEFVALUE" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
+      <Column Name="ACCOUNTID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="POSPRICECOLUMN" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="CITYLEDGER" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="MF_ROW" Type="System.Decimal" DbType="Decimal(19,2)" CanBeNull="true" />
+      <Column Name="MF_TO" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="MF_PRICECODE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="MF_VOUCHER" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="MF_STAYTYPE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="MF_CONTRACTID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="invalid" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="CONTRACTID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="ALLOTMENT_ID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="MF_FIX" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="SP_CODE" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="CALLED" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FIRSTNAME" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LASTNAME" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="ADRES" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CITY" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="POSTCODE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TEL1" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="TEL2" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="TEL3" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="FAX" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="CARIKOD" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="ULKEKOD" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="NATION" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="MESLEK" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="PLAKA" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="DOGUMYER" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="DOGUMTARIH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BABA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="KIMTUR" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="KIMNO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="KIMYER" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="KIMTARIH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MUSTYPE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="OLDCLIENT" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="CINSIYET" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="MEDENI" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="VNO" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="VDAIRE" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="HOTELCODE" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SPECCODE1" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SPECCODE2" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="BOOKNO" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="PRESTAY" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ENTERPRISEID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="IDENTITYCITY" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="IDENTITYDISTRICT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="IDENTITYTOWN" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="IDENTITYVOLUME" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="IDENTITYORDER" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="IDENTITYFAMILYORDER" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="IDENTITYSERI" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="ICITY" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="ENTERPRISEDID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="ITOWN" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="IDISTRICT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="IVOLUME" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="IORDER" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="IFAMILYORDER" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="ISERI" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="MOTHER" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="CHECKOUT" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="PARENTTYPE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FAVORITE_ROOM" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="LANGUAGE" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PARENTID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="HISTORY" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="COMPANYID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="BLACKLIST" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="BLACKLIST_REASON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MARRIAGE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDDISTRICT" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="TRANSFER_LOCK" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="CLUB_CARD_ID" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="INACTIVE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="ARNUMBER" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="SALESAGENT" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="EMPLOYEES" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="REVPOTROOM" Type="System.Decimal" DbType="Decimal(19,2)" CanBeNull="true" />
+      <Column Name="REVPOTCATERING" Type="System.Decimal" DbType="Decimal(19,2)" CanBeNull="true" />
+      <Column Name="INDUSTRYCODE" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="COMPETITION" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="ACTIONCODE" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="PREFERENCES" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="TACOMMISSION" Type="System.Decimal" DbType="Decimal(19,2)" CanBeNull="true" />
+      <Column Name="DISPLAY" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="PREROOM" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="PRECATEGORY" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="departments" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="EDUCATION" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="INFLUENCE" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="NOMAIL" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="NOSMS" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="MF_FROM" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="CREDITLIMIT" Type="System.Decimal" DbType="Decimal(19,2)" CanBeNull="true" />
+      <Column Name="LASTSTATEMENT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATEDBY" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="UPDATEBY" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="BO_PAYMENT_CURRENCY" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="POSCARDID" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="DEFCHANNEL" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="DEFSTAYTYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEFSTATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PASSWORD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACTNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ORIGINCITY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SCHOOL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SCHOOLDEPARTMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SCHOOLCLASS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="MIDNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SMOKING" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="CONTACTEMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACTADDRESS" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="SUMMERPREF" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="STUDENTPERIOD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BO_PAYMENT_CURR" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="SCHOOL_TYPE" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="CONTACT_TCNO" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CONTACT_PPNO" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CONTACT_RELATION" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACT_COUNTRY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACT_CITY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACT_TOWN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ACOOUNTID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="CHN_CODE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="STUDENTREMARK" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CONTACT_JOB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACT_JOBADDRESS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MAJORDISEASES" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ADDRESS_TOWN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACT_SOCIAL_SECURITY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACT_1_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACT_1_RELATION" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CONTACT_1_TEL" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="CRM_DISTRICT" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="CRM_CATEGORY" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="PROFILE_PUBLIC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ROOMVIEW" Member="ROOMVIEW">
+    <Type Name="ROOMVIEW">
+      <Column Name="REGNO_IN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ODANO" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ODATIP" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="YATAKTIP" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="EVENT_SUBJECT" Type="System.String" DbType="VarChar(81) NOT NULL" CanBeNull="false" />
+      <Column Name="KIRLI" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ARIZALI" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="BLOKE" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="FONTCOLOR" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="ROOMCOLOR" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="FLOOR" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="SOLD" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="CHDTOTAL" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="NO" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="ROOM" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="TYPE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="RES_ROOM_TYPE" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="BED" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="FROMDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RECDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FROMTIME" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="TODATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOTIME" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="LEAVETIME" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="AGENCY" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AGENCY_SP_CODE" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="GROUPID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="GRUPNO" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="RELEASE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OPT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FIRSTNAME" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LASTNAME" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(41)" CanBeNull="true" />
+      <Column Name="FIRSTNAME2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LASTNAME2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BOARD" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="PCODE" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="STATE" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="NATION" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="SCODE1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SCODE2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SAFEKEY" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="NROOM" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="PAX" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="EXTRA" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="EXTRA2" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="CHD1" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="FREECHD1" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="CHD2" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="FREECHD2" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="BABY" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="STATUS_INFO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="REMARKREASON" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="HOTELCODE" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ANLASMANO" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="GOSHOW" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="CANCELDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="VOCHER" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="VIPTEXT" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="VIPSTATUS" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="COLOR" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="STAY" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="LOCK_" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="LOCKUSER_" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LOCKREMARK_" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="WAITLIST" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="WAITSTART" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="WAITEND" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="WAITREMARK" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="STAYTYPE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="RESERVATIONCHANNEL" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SHADOW" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="OCLIENTSTATUS" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="EXTERNAL_IDENTIFIER" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="EXTERNAL_SOURCE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="EXTERNAL_REMARK" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DEFINITE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="EXCLUDE_ALLOTMENT" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="CONTRACT_NAME" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ALLOTMENT_ID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="ALLOTMENT_NAME" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="GROUPNAME" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="ACCOUNTTYPE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="BALANCE" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
+      <Column Name="INVOICEID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NIGHT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROOM_FEATURES" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PROFILEID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="SIDEBY" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="MARKETCODE" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="REGNO" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="ACKOD" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PAX_INFO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HKEEPCOLOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SHAREID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="SHAREMASTER" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="SHARESLAVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MARKET" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="[_COUT_TOTIME]" Member="_COUT_TOTIME" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="[_CIN_REGNO]" Member="_CIN_REGNO" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="[_CIN_FROMTIME]" Member="_CIN_FROMTIME" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="[_CIN_VIPTEXT]" Member="_CIN_VIPTEXT" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="[_CIN_LASTNAME]" Member="_CIN_LASTNAME" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[_CIN_FIRSTNAME]" Member="_CIN_FIRSTNAME" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[_CIN_PAX]" Member="_CIN_PAX" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="[_CIN_EXTRA]" Member="_CIN_EXTRA" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="[_CIN_CHD1]" Member="_CIN_CHD1" Type="System.Decimal" DbType="Decimal(11,0)" CanBeNull="true" />
+      <Column Name="[_CIN_CHD2]" Member="_CIN_CHD2" Type="System.Decimal" DbType="Decimal(11,0)" CanBeNull="true" />
+      <Column Name="[_CIN_BABY]" Member="_CIN_BABY" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="DIRTY" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="OO" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

@@ -181,6 +181,43 @@
     <Property Name="CRM_CATEGORY" Type="varchar" MaxLength="40" />
     <Property Name="PROFILE_PUBLIC" Type="int" />
   </EntityType>
+  <EntityType Name="ODA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="numeric" Precision="19" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ODANO" Type="varchar" MaxLength="8" />
+    <Property Name="ROOM_ORDER" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="NLEFT" Type="varchar" MaxLength="8" />
+    <Property Name="NRIGHT" Type="varchar" MaxLength="8" />
+    <Property Name="NFRONT" Type="varchar" MaxLength="8" />
+    <Property Name="BACK" Type="varchar" MaxLength="8" />
+    <Property Name="ODATIP" Type="varchar" MaxLength="6" />
+    <Property Name="YATAKTIP" Type="varchar" MaxLength="6" />
+    <Property Name="REMARK" Type="varchar" MaxLength="120" />
+    <Property Name="CAPACITY" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="REGNO" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="KIRLI" Type="varchar" MaxLength="1" />
+    <Property Name="ARIZALI" Type="varchar" MaxLength="1" />
+    <Property Name="BLOKE" Type="varchar" MaxLength="1" />
+    <Property Name="BLOKEREM" Type="varchar" MaxLength="120" />
+    <Property Name="RESER1" Type="varchar" MaxLength="1" />
+    <Property Name="RESER2" Type="varchar" MaxLength="1" />
+    <Property Name="KAT" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="RENK" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="INKAPASITE" Type="varchar" MaxLength="1" />
+    <Property Name="PROP" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="HKEEP" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="HOTELCODE" Type="varchar" MaxLength="15" />
+    <Property Name="SOLD" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="STATIONID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="STATION" Type="varchar" MaxLength="50" />
+    <Property Name="FEATURES" Type="varchar" MaxLength="500" />
+    <Property Name="BLOCK" Type="varchar" MaxLength="25" />
+    <Property Name="RECORDDATE" Type="datetime" />
+    <Property Name="IsRoom" Type="int" />
+    <Property Name="RoomGroup" Type="varchar" MaxLength="15" />
+  </EntityType>
   <EntityType Name="USERS">
     <Key>
       <PropertyRef Name="CODE" />
@@ -214,8 +251,250 @@
     <Property Name="LASTADDNO" Type="numeric" Precision="19" Scale="0" />
     <Property Name="REPORT_EMAIL" Type="varchar" MaxLength="255" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CESTUR.dbo.ROOMVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ROOMVIEW">
+    <Key>
+      <PropertyRef Name="EVENT_SUBJECT" />
+      <PropertyRef Name="DIRTY" />
+      <PropertyRef Name="OO" />
+    </Key>
+    <Property Name="REGNO_IN" Type="int" />
+    <Property Name="ODANO" Type="varchar" MaxLength="8" />
+    <Property Name="ODATIP" Type="varchar" MaxLength="6" />
+    <Property Name="YATAKTIP" Type="varchar" MaxLength="6" />
+    <Property Name="EVENT_SUBJECT" Type="varchar" MaxLength="81" Nullable="false" />
+    <Property Name="KIRLI" Type="varchar" MaxLength="10" />
+    <Property Name="ARIZALI" Type="varchar" MaxLength="1" />
+    <Property Name="BLOKE" Type="varchar" MaxLength="1" />
+    <Property Name="FONTCOLOR" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="ROOMCOLOR" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="FLOOR" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="SOLD" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="CHDTOTAL" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="NO" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="ROOM" Type="varchar" MaxLength="8" />
+    <Property Name="TYPE" Type="varchar" MaxLength="6" />
+    <Property Name="RES_ROOM_TYPE" Type="varchar" MaxLength="7" />
+    <Property Name="BED" Type="varchar" MaxLength="6" />
+    <Property Name="FROMDATE" Type="datetime" />
+    <Property Name="RECDATE" Type="datetime" />
+    <Property Name="UPDATEDATE" Type="datetime" />
+    <Property Name="FROMTIME" Type="varchar" MaxLength="14" />
+    <Property Name="TODATE" Type="datetime" />
+    <Property Name="TOTIME" Type="varchar" MaxLength="14" />
+    <Property Name="LEAVETIME" Type="varchar" MaxLength="14" />
+    <Property Name="AGENCY" Type="varchar" MaxLength="15" />
+    <Property Name="AGENCY_SP_CODE" Type="varchar" MaxLength="25" />
+    <Property Name="GROUPID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="GRUPNO" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="RELEASE" Type="datetime" />
+    <Property Name="OPT" Type="datetime" />
+    <Property Name="TITLE" Type="varchar" MaxLength="10" />
+    <Property Name="FIRSTNAME" Type="varchar" MaxLength="20" />
+    <Property Name="LASTNAME" Type="varchar" MaxLength="20" />
+    <Property Name="NAME" Type="varchar" MaxLength="41" />
+    <Property Name="FIRSTNAME2" Type="varchar" MaxLength="20" />
+    <Property Name="LASTNAME2" Type="varchar" MaxLength="20" />
+    <Property Name="BOARD" Type="varchar" MaxLength="6" />
+    <Property Name="PCODE" Type="varchar" MaxLength="15" />
+    <Property Name="STATE" Type="varchar" MaxLength="5" />
+    <Property Name="NATION" Type="varchar" MaxLength="5" />
+    <Property Name="SCODE1" Type="varchar" MaxLength="20" />
+    <Property Name="SCODE2" Type="varchar" MaxLength="20" />
+    <Property Name="SAFEKEY" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="NROOM" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="PAX" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="EXTRA" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="EXTRA2" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="CHD1" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="FREECHD1" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="CHD2" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="FREECHD2" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="BABY" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="STATUS" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="STATUS_INFO" Type="varchar" MaxLength="20" />
+    <Property Name="REMARKREASON" Type="varchar" MaxLength="255" />
+    <Property Name="HOTELCODE" Type="varchar" MaxLength="15" />
+    <Property Name="ANLASMANO" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="GOSHOW" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="CANCELDATE" Type="datetime" />
+    <Property Name="VOCHER" Type="varchar" MaxLength="40" />
+    <Property Name="VIPTEXT" Type="varchar" MaxLength="15" />
+    <Property Name="VIPSTATUS" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="COLOR" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="STAY" Type="varchar" MaxLength="4" />
+    <Property Name="LOCK_" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="LOCKUSER_" Type="varchar" MaxLength="20" />
+    <Property Name="LOCKREMARK_" Type="varchar" MaxLength="100" />
+    <Property Name="WAITLIST" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="WAITSTART" Type="varchar" MaxLength="15" />
+    <Property Name="WAITEND" Type="varchar" MaxLength="15" />
+    <Property Name="WAITREMARK" Type="varchar" MaxLength="80" />
+    <Property Name="STAYTYPE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="RESERVATIONCHANNEL" Type="varchar" MaxLength="25" />
+    <Property Name="SHADOW" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="OCLIENTSTATUS" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="EXTERNAL_IDENTIFIER" Type="varchar" MaxLength="25" />
+    <Property Name="EXTERNAL_SOURCE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="EXTERNAL_REMARK" Type="varchar" MaxLength="50" />
+    <Property Name="DEFINITE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="EXCLUDE_ALLOTMENT" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="CONTRACT_NAME" Type="varchar" MaxLength="15" />
+    <Property Name="ALLOTMENT_ID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="ALLOTMENT_NAME" Type="varchar" MaxLength="25" />
+    <Property Name="GROUPNAME" Type="varchar" MaxLength="60" />
+    <Property Name="ACCOUNTTYPE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="BALANCE" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="INVOICEID" Type="varchar" MaxLength="50" />
+    <Property Name="NIGHT" Type="int" />
+    <Property Name="ROOM_FEATURES" Type="varchar" MaxLength="500" />
+    <Property Name="PROFILEID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="SIDEBY" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="MARKETCODE" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="REGNO" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="ACKOD" Type="varchar" MaxLength="15" />
+    <Property Name="PAX_INFO" Type="varchar" MaxLength="10" />
+    <Property Name="HKEEPCOLOR" Type="int" />
+    <Property Name="SHAREID" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="SHAREMASTER" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="SHARESLAVE" Type="int" />
+    <Property Name="MARKET" Type="varchar" MaxLength="250" />
+    <Property Name="_COUT_TOTIME" Type="varchar" MaxLength="14" />
+    <Property Name="_CIN_REGNO" Type="numeric" Precision="19" Scale="0" />
+    <Property Name="_CIN_FROMTIME" Type="varchar" MaxLength="14" />
+    <Property Name="_CIN_VIPTEXT" Type="varchar" MaxLength="15" />
+    <Property Name="_CIN_LASTNAME" Type="varchar" MaxLength="20" />
+    <Property Name="_CIN_FIRSTNAME" Type="varchar" MaxLength="20" />
+    <Property Name="_CIN_PAX" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="_CIN_EXTRA" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="_CIN_CHD1" Type="numeric" Precision="11" Scale="0" />
+    <Property Name="_CIN_CHD2" Type="numeric" Precision="11" Scale="0" />
+    <Property Name="_CIN_BABY" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="DIRTY" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="OO" Type="varchar" MaxLength="12" Nullable="false" />
+  </EntityType>
   <EntityContainer Name="CESTURModelStoreContainer">
     <EntitySet Name="MUSTERI" EntityType="Self.MUSTERI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ODA" EntityType="Self.ODA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROOMVIEW" EntityType="Self.ROOMVIEW" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ROOMVIEW].[REGNO_IN] AS [REGNO_IN], 
+    [ROOMVIEW].[ODANO] AS [ODANO], 
+    [ROOMVIEW].[ODATIP] AS [ODATIP], 
+    [ROOMVIEW].[YATAKTIP] AS [YATAKTIP], 
+    [ROOMVIEW].[EVENT_SUBJECT] AS [EVENT_SUBJECT], 
+    [ROOMVIEW].[KIRLI] AS [KIRLI], 
+    [ROOMVIEW].[ARIZALI] AS [ARIZALI], 
+    [ROOMVIEW].[BLOKE] AS [BLOKE], 
+    [ROOMVIEW].[FONTCOLOR] AS [FONTCOLOR], 
+    [ROOMVIEW].[ROOMCOLOR] AS [ROOMCOLOR], 
+    [ROOMVIEW].[FLOOR] AS [FLOOR], 
+    [ROOMVIEW].[SOLD] AS [SOLD], 
+    [ROOMVIEW].[CHDTOTAL] AS [CHDTOTAL], 
+    [ROOMVIEW].[NO] AS [NO], 
+    [ROOMVIEW].[ROOM] AS [ROOM], 
+    [ROOMVIEW].[TYPE] AS [TYPE], 
+    [ROOMVIEW].[RES_ROOM_TYPE] AS [RES_ROOM_TYPE], 
+    [ROOMVIEW].[BED] AS [BED], 
+    [ROOMVIEW].[FROMDATE] AS [FROMDATE], 
+    [ROOMVIEW].[RECDATE] AS [RECDATE], 
+    [ROOMVIEW].[UPDATEDATE] AS [UPDATEDATE], 
+    [ROOMVIEW].[FROMTIME] AS [FROMTIME], 
+    [ROOMVIEW].[TODATE] AS [TODATE], 
+    [ROOMVIEW].[TOTIME] AS [TOTIME], 
+    [ROOMVIEW].[LEAVETIME] AS [LEAVETIME], 
+    [ROOMVIEW].[AGENCY] AS [AGENCY], 
+    [ROOMVIEW].[AGENCY_SP_CODE] AS [AGENCY_SP_CODE], 
+    [ROOMVIEW].[GROUPID] AS [GROUPID], 
+    [ROOMVIEW].[GRUPNO] AS [GRUPNO], 
+    [ROOMVIEW].[RELEASE] AS [RELEASE], 
+    [ROOMVIEW].[OPT] AS [OPT], 
+    [ROOMVIEW].[TITLE] AS [TITLE], 
+    [ROOMVIEW].[FIRSTNAME] AS [FIRSTNAME], 
+    [ROOMVIEW].[LASTNAME] AS [LASTNAME], 
+    [ROOMVIEW].[NAME] AS [NAME], 
+    [ROOMVIEW].[FIRSTNAME2] AS [FIRSTNAME2], 
+    [ROOMVIEW].[LASTNAME2] AS [LASTNAME2], 
+    [ROOMVIEW].[BOARD] AS [BOARD], 
+    [ROOMVIEW].[PCODE] AS [PCODE], 
+    [ROOMVIEW].[STATE] AS [STATE], 
+    [ROOMVIEW].[NATION] AS [NATION], 
+    [ROOMVIEW].[SCODE1] AS [SCODE1], 
+    [ROOMVIEW].[SCODE2] AS [SCODE2], 
+    [ROOMVIEW].[SAFEKEY] AS [SAFEKEY], 
+    [ROOMVIEW].[NROOM] AS [NROOM], 
+    [ROOMVIEW].[PAX] AS [PAX], 
+    [ROOMVIEW].[EXTRA] AS [EXTRA], 
+    [ROOMVIEW].[EXTRA2] AS [EXTRA2], 
+    [ROOMVIEW].[CHD1] AS [CHD1], 
+    [ROOMVIEW].[FREECHD1] AS [FREECHD1], 
+    [ROOMVIEW].[CHD2] AS [CHD2], 
+    [ROOMVIEW].[FREECHD2] AS [FREECHD2], 
+    [ROOMVIEW].[BABY] AS [BABY], 
+    [ROOMVIEW].[STATUS] AS [STATUS], 
+    [ROOMVIEW].[STATUS_INFO] AS [STATUS_INFO], 
+    [ROOMVIEW].[REMARKREASON] AS [REMARKREASON], 
+    [ROOMVIEW].[HOTELCODE] AS [HOTELCODE], 
+    [ROOMVIEW].[ANLASMANO] AS [ANLASMANO], 
+    [ROOMVIEW].[GOSHOW] AS [GOSHOW], 
+    [ROOMVIEW].[CANCELDATE] AS [CANCELDATE], 
+    [ROOMVIEW].[VOCHER] AS [VOCHER], 
+    [ROOMVIEW].[VIPTEXT] AS [VIPTEXT], 
+    [ROOMVIEW].[VIPSTATUS] AS [VIPSTATUS], 
+    [ROOMVIEW].[COLOR] AS [COLOR], 
+    [ROOMVIEW].[STAY] AS [STAY], 
+    [ROOMVIEW].[LOCK_] AS [LOCK_], 
+    [ROOMVIEW].[LOCKUSER_] AS [LOCKUSER_], 
+    [ROOMVIEW].[LOCKREMARK_] AS [LOCKREMARK_], 
+    [ROOMVIEW].[WAITLIST] AS [WAITLIST], 
+    [ROOMVIEW].[WAITSTART] AS [WAITSTART], 
+    [ROOMVIEW].[WAITEND] AS [WAITEND], 
+    [ROOMVIEW].[WAITREMARK] AS [WAITREMARK], 
+    [ROOMVIEW].[STAYTYPE] AS [STAYTYPE], 
+    [ROOMVIEW].[RESERVATIONCHANNEL] AS [RESERVATIONCHANNEL], 
+    [ROOMVIEW].[SHADOW] AS [SHADOW], 
+    [ROOMVIEW].[OCLIENTSTATUS] AS [OCLIENTSTATUS], 
+    [ROOMVIEW].[EXTERNAL_IDENTIFIER] AS [EXTERNAL_IDENTIFIER], 
+    [ROOMVIEW].[EXTERNAL_SOURCE] AS [EXTERNAL_SOURCE], 
+    [ROOMVIEW].[EXTERNAL_REMARK] AS [EXTERNAL_REMARK], 
+    [ROOMVIEW].[DEFINITE] AS [DEFINITE], 
+    [ROOMVIEW].[EXCLUDE_ALLOTMENT] AS [EXCLUDE_ALLOTMENT], 
+    [ROOMVIEW].[CONTRACT_NAME] AS [CONTRACT_NAME], 
+    [ROOMVIEW].[ALLOTMENT_ID] AS [ALLOTMENT_ID], 
+    [ROOMVIEW].[ALLOTMENT_NAME] AS [ALLOTMENT_NAME], 
+    [ROOMVIEW].[GROUPNAME] AS [GROUPNAME], 
+    [ROOMVIEW].[ACCOUNTTYPE] AS [ACCOUNTTYPE], 
+    [ROOMVIEW].[BALANCE] AS [BALANCE], 
+    [ROOMVIEW].[INVOICEID] AS [INVOICEID], 
+    [ROOMVIEW].[NIGHT] AS [NIGHT], 
+    [ROOMVIEW].[ROOM_FEATURES] AS [ROOM_FEATURES], 
+    [ROOMVIEW].[PROFILEID] AS [PROFILEID], 
+    [ROOMVIEW].[SIDEBY] AS [SIDEBY], 
+    [ROOMVIEW].[MARKETCODE] AS [MARKETCODE], 
+    [ROOMVIEW].[REGNO] AS [REGNO], 
+    [ROOMVIEW].[ACKOD] AS [ACKOD], 
+    [ROOMVIEW].[PAX_INFO] AS [PAX_INFO], 
+    [ROOMVIEW].[HKEEPCOLOR] AS [HKEEPCOLOR], 
+    [ROOMVIEW].[SHAREID] AS [SHAREID], 
+    [ROOMVIEW].[SHAREMASTER] AS [SHAREMASTER], 
+    [ROOMVIEW].[SHARESLAVE] AS [SHARESLAVE], 
+    [ROOMVIEW].[MARKET] AS [MARKET], 
+    [ROOMVIEW].[_COUT_TOTIME] AS [_COUT_TOTIME], 
+    [ROOMVIEW].[_CIN_REGNO] AS [_CIN_REGNO], 
+    [ROOMVIEW].[_CIN_FROMTIME] AS [_CIN_FROMTIME], 
+    [ROOMVIEW].[_CIN_VIPTEXT] AS [_CIN_VIPTEXT], 
+    [ROOMVIEW].[_CIN_LASTNAME] AS [_CIN_LASTNAME], 
+    [ROOMVIEW].[_CIN_FIRSTNAME] AS [_CIN_FIRSTNAME], 
+    [ROOMVIEW].[_CIN_PAX] AS [_CIN_PAX], 
+    [ROOMVIEW].[_CIN_EXTRA] AS [_CIN_EXTRA], 
+    [ROOMVIEW].[_CIN_CHD1] AS [_CIN_CHD1], 
+    [ROOMVIEW].[_CIN_CHD2] AS [_CIN_CHD2], 
+    [ROOMVIEW].[_CIN_BABY] AS [_CIN_BABY], 
+    [ROOMVIEW].[DIRTY] AS [DIRTY], 
+    [ROOMVIEW].[OO] AS [OO]
+    FROM [dbo].[ROOMVIEW] AS [ROOMVIEW]</DefiningQuery>
+    </EntitySet>
   </EntityContainer>
 </Schema>

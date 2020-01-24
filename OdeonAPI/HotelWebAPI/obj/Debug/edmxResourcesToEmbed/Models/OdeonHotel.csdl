@@ -36,6 +36,8 @@
   <EntityContainer Name="CESTUREntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="USERS" EntityType="Self.USER" />
     <EntitySet Name="MUSTERIs" EntityType="CESTURModel.MUSTERI" />
+    <EntitySet Name="ROOMVIEWs" EntityType="CESTURModel.ROOMVIEW" />
+    <EntitySet Name="ODAs" EntityType="CESTURModel.ODA" />
   </EntityContainer>
   <EntityType Name="MUSTERI">
     <Key>
@@ -217,5 +219,163 @@
     <Property Name="CRM_DISTRICT" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="CRM_CATEGORY" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="PROFILE_PUBLIC" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ROOMVIEW">
+    <Key>
+      <PropertyRef Name="EVENT_SUBJECT" />
+      <PropertyRef Name="DIRTY" />
+      <PropertyRef Name="OO" />
+    </Key>
+    <Property Name="REGNO_IN" Type="Int32" />
+    <Property Name="ODANO" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="ODATIP" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="YATAKTIP" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="EVENT_SUBJECT" Type="String" Nullable="false" MaxLength="81" FixedLength="false" Unicode="false" />
+    <Property Name="KIRLI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ARIZALI" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BLOKE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FONTCOLOR" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="ROOMCOLOR" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="FLOOR" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="SOLD" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="CHDTOTAL" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="NO" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="ROOM" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="TYPE" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="RES_ROOM_TYPE" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="BED" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="FROMDATE" Type="DateTime" Precision="3" />
+    <Property Name="RECDATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATEDATE" Type="DateTime" Precision="3" />
+    <Property Name="FROMTIME" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="TODATE" Type="DateTime" Precision="3" />
+    <Property Name="TOTIME" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="LEAVETIME" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="AGENCY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="AGENCY_SP_CODE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="GROUPID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="GRUPNO" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="RELEASE" Type="DateTime" Precision="3" />
+    <Property Name="OPT" Type="DateTime" Precision="3" />
+    <Property Name="TITLE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FIRSTNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LASTNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="41" FixedLength="false" Unicode="false" />
+    <Property Name="FIRSTNAME2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LASTNAME2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="BOARD" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="PCODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="STATE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="NATION" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="SCODE1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SCODE2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SAFEKEY" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="NROOM" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="PAX" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="EXTRA" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="EXTRA2" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="CHD1" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="FREECHD1" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="CHD2" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="FREECHD2" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="BABY" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="STATUS" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="STATUS_INFO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="REMARKREASON" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="HOTELCODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ANLASMANO" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="GOSHOW" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="CANCELDATE" Type="DateTime" Precision="3" />
+    <Property Name="VOCHER" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="VIPTEXT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="VIPSTATUS" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="COLOR" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="STAY" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="LOCK_" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="LOCKUSER_" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LOCKREMARK_" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="WAITLIST" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="WAITSTART" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="WAITEND" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="WAITREMARK" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="STAYTYPE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="RESERVATIONCHANNEL" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="SHADOW" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="OCLIENTSTATUS" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="EXTERNAL_IDENTIFIER" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="EXTERNAL_SOURCE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="EXTERNAL_REMARK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEFINITE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="EXCLUDE_ALLOTMENT" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="CONTRACT_NAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ALLOTMENT_ID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="ALLOTMENT_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="GROUPNAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNTTYPE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="BALANCE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="INVOICEID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NIGHT" Type="Int32" />
+    <Property Name="ROOM_FEATURES" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PROFILEID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="SIDEBY" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="MARKETCODE" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="REGNO" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="ACKOD" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PAX_INFO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HKEEPCOLOR" Type="Int32" />
+    <Property Name="SHAREID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="SHAREMASTER" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="SHARESLAVE" Type="Int32" />
+    <Property Name="MARKET" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="C_COUT_TOTIME" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="C_CIN_REGNO" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="C_CIN_FROMTIME" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="C_CIN_VIPTEXT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="C_CIN_LASTNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="C_CIN_FIRSTNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="C_CIN_PAX" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="C_CIN_EXTRA" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="C_CIN_CHD1" Type="Decimal" Precision="11" Scale="0" />
+    <Property Name="C_CIN_CHD2" Type="Decimal" Precision="11" Scale="0" />
+    <Property Name="C_CIN_BABY" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="DIRTY" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="OO" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ODA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="19" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ODANO" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="ROOM_ORDER" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="NLEFT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="NRIGHT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="NFRONT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="BACK" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="ODATIP" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="YATAKTIP" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="REMARK" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="CAPACITY" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="REGNO" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="KIRLI" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ARIZALI" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BLOKE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BLOKEREM" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="RESER1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="RESER2" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="KAT" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="RENK" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="INKAPASITE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="PROP" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="HKEEP" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="HOTELCODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SOLD" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="STATIONID" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="STATION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FEATURES" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="BLOCK" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="RECORDDATE" Type="DateTime" Precision="3" />
+    <Property Name="IsRoom" Type="Int32" />
+    <Property Name="RoomGroup" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

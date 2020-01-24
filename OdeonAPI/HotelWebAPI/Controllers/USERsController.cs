@@ -11,12 +11,13 @@ using System.Web.Http.Description;
 using HotelWebAPI.Models;
 using System.Web.Mvc;
 using System.Web;
+using HotelWebAPI.LINQ;
 
 namespace HotelWebAPI.Controllers
 {
     public class USERsController : ApiController
     {
-        private CESTUREntities db = new CESTUREntities();
+        private dbLINQDataContext db = new dbLINQDataContext();
         public UserPoco GetLogin(string code, string password)
         {
             var userdb = db.USERS.FirstOrDefault(e => e.CODE == code && e.PASSW == password);
@@ -31,7 +32,7 @@ namespace HotelWebAPI.Controllers
                     Code = userdb.CODE,
                     ProfileId = Convert.ToInt32(userdb.PROFILEID),                   
                 };
-                var musteridb = db.MUSTERIs.FirstOrDefault(e => e.MUSNO == userpoco.ProfileId);
+                var musteridb = db.MUSTERI.FirstOrDefault(e => e.MUSNO == userpoco.ProfileId);
                 if(musteridb!=null)
                 {
                     userpoco.FirstName = musteridb.FIRSTNAME;
@@ -40,7 +41,7 @@ namespace HotelWebAPI.Controllers
                 return userpoco;
             }
         }
-   
+ 
         protected override void Dispose(bool disposing)
         {
             if (disposing)

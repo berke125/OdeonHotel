@@ -61,6 +61,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -174,10 +175,16 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RoomViewController.cs" />
     <Compile Include="Controllers\USERsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LINQ\dbLINQ.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbLINQ.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs">
       <DependentUpon>HotelDB.tt</DependentUpon>
@@ -197,31 +204,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HotelDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\MUSTERI.cs">
-      <DependentUpon>OdeonHotel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\OdeonHotel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OdeonHotel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\OdeonHotel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OdeonHotel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\OdeonHotel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OdeonHotel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\RoomPoco.cs" />
-    <Compile Include="Models\ROOMVIEW.cs">
-      <DependentUpon>OdeonHotel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\USER.cs">
-      <DependentUpon>OdeonHotel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\UserPoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -271,16 +254,6 @@
     <Content Include="Models\HotelDB.edmx.diagram">
       <DependentUpon>HotelDB.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\OdeonHotel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OdeonHotel.edmx</DependentUpon>
-      <LastGenOutput>OdeonHotel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\OdeonHotel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OdeonHotel.edmx</DependentUpon>
-      <LastGenOutput>OdeonHotel.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -304,13 +277,14 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <EntityDeploy Include="Models\OdeonHotel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>OdeonHotel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\OdeonHotel.edmx.diagram">
-      <DependentUpon>OdeonHotel.edmx</DependentUpon>
+    <Content Include="LINQ\dbLINQ.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbLINQ.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </Content>
+    <None Include="LINQ\dbLINQ.dbml.layout">
+      <DependentUpon>dbLINQ.dbml</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -422,6 +396,7 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

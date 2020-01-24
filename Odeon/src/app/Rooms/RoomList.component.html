@@ -24,11 +24,17 @@
     background-color: darkblue;
     color: coral;
   }
+  .row1 
+  {
+    background-color: forestgreen;
+    color:white;
+  }
 </style>
 <form class="example-form">
   <div class="center">
     <div id="MainContent">
       <p>RoomList works.</p>
+     
       <table class="table">
         <thead>
           <tr>
@@ -39,11 +45,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="">
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+          <tr *ngFor="let user of hotel_users">
+            <th class="row1">{{user.OdaNo}}
+            {{user.OdaTip}}</th>
+            <th>{{user.Title}}
+            {{user.FirstName}} {{user.LastName}}</th>
+            <th>{{user.FromDate | date:'dd MMMM yyyy'}}</th>
+            <th>{{user.ToDate | date:'dd MMMM yyyy'}}</th>
           </tr>
         </tbody>
       </table>
