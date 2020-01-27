@@ -39,6 +39,7 @@
 
   .content {
     display: flex;
+    
     margin: 32px auto;
     padding: 0 16px;
     max-width: 960px;
@@ -124,7 +125,14 @@
     background-color: blue;
     color: white;
   }
-  
+  .sidenav_infobox
+  {
+    padding-left:38px;
+  }
+  .menu_spacer
+  {
+    padding-top:10px;
+  }
 </style>
 
 <mat-toolbar>
@@ -147,7 +155,6 @@
     <div>
       <a style="color:coral" mat-button routerLink="/Home">Home Page</a>
       <a style="color:coral" mat-button *ngIf="!customerService.LoggedIn()" routerLink="/Sign_In">Sign In</a>
-      <a style="color:coral" mat-button *ngIf="!customerService.LoggedIn()" routerLink="/Sign_Up/0">Sign Up</a>
       <a style="color:coral" mat-button *ngIf="customerService.LoggedIn()" routerLink="/Home" (click)="logout()">Logout</a>
 
     </div>
@@ -157,16 +164,14 @@
 
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side" [(opened)]="opened">
-    <h4>Hotel Menu</h4>
+    <h4 class="sidenav_infobox">Hotel Menu</h4>
+    <div class="menu_spacer"></div>
     <ul>
       <li>
         <a mat-button routerLink="/Home">Home</a>
       </li>
       <li *ngIf="!customerService.LoggedIn()">
         <a mat-button routerLink="/Sign_In">Sign In</a>
-      </li>
-      <li *ngIf="!customerService.LoggedIn()">
-        <a mat-button routerLink="/Sign_Up/0">Sign Up</a>
       </li>
       <li *ngIf="customerService.LoggedIn()">
         <a mat-button routerLink="/CustomerList">Customer</a>

@@ -1,7 +1,6 @@
 <style>
   #MainContent {
-    width: 664px;
-    float: left;
+    width: 700px;
     padding-left: 200px;
     margin: 0px;
   }
@@ -9,11 +8,10 @@
   .center {
     display: flex;
     justify-content: center;
-    align-items: center;
   }
 
   .spacer {
-    margin-bottom: 20px;
+    margin-top: 25px;
   }
 
   .example-spacer {
@@ -63,7 +61,9 @@
 
       <div class="spacer"></div>
       <button mat-raised-button [disabled]="form.invalid" (click)="login()">Login</button>
+
       <button mat-raised-button routerLink="/Home">Cancel</button>
+
     </div>
 
 

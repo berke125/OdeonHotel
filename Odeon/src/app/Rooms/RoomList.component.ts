@@ -9,6 +9,7 @@ import { UserService } from '../shared/USER.service';
 export class RoomListComponent implements OnInit
 {
   //hotel_users: any=[];
+  public myModel: string = '1';
   colorFlag = false;
   hotel_users: any;
   public odano: string = '';
@@ -19,9 +20,19 @@ export class RoomListComponent implements OnInit
  //this.service.GetRoom(this.odano).subscribe((data:any) => this.hotel_users = data);
     this.service.GetRoom().subscribe((data) => this.hotel_users = data);
   }
+  EmptyRooms()
+  {
+    this.service.GetRooms(this.myModel).subscribe((data) => this.hotel_users = data);
+  }
+  FullRooms()
+  {
+
+  }
   ngOnInit()
   {
     this.AllRooms();
+    this.EmptyRooms();
+    this.FullRooms();
   }
 
 }

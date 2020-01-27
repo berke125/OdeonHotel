@@ -1,9 +1,9 @@
 <style>
   #MainContent {
-    width: 664px;
-    float: left;
-    padding-left: 200px;
+    width: 800px;
+    padding-left: 100px;
     margin: 0px;
+    padding-top: 5px;
   }
 
   .center {
@@ -24,34 +24,70 @@
     background-color: darkblue;
     color: coral;
   }
-  .row1 
-  {
+
+  .row1 {
     background-color: forestgreen;
-    color:white;
+    color: white;
+  }
+
+  .row2 {
+    background-color: red;
+  }
+
+  .general_row {
+    padding-left: 85px;
+  }
+
+  .general_row2 {
+    padding-left: 20px;
+  }
+
+  .general_row3 {
+    padding-left: 5px;
+    padding-right: 10px;
+  }
+
+  .infobox {
+    padding-left: 300px;
+    padding-bottom:5px;
+  }
+  .radio_table_space
+  {
+    padding-top:7px;
   }
 </style>
 <form class="example-form">
   <div class="center">
     <div id="MainContent">
-      <p>RoomList works.</p>
-     
+      <mat-radio-group [(ngModel)]="myModel" [ngModelOptions]="{standalone: true}" (ngModelChange)=" EmptyRooms()" aria-label="Select an option">
+        <mat-radio-button class="infobox"   value="1">Tüm Odalar</mat-radio-button>
+        
+        <mat-radio-button class="infobox"  value="2">Boş Odalar</mat-radio-button>
+        
+        <mat-radio-button class="infobox"  value="3">Dolu Odalar</mat-radio-button>
+      </mat-radio-group>
+      <div class="radio_table_space"></div>
       <table class="table">
         <thead>
           <tr>
             <th>Oda_No</th>
-            <th>Misafir</th>
+            <th class="general_row">Misafir</th>
             <th>Giriş Tarihi</th>
             <th>Çıkış Tarihi</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let user of hotel_users">
-            <th class="row1">{{user.OdaNo}}
-            {{user.OdaTip}}</th>
-            <th>{{user.Title}}
-            {{user.FirstName}} {{user.LastName}}</th>
-            <th>{{user.FromDate | date:'dd MMMM yyyy'}}</th>
-            <th>{{user.ToDate | date:'dd MMMM yyyy'}}</th>
+            <th [ngClass]="user.No>0 ? 'row2':'row1'">
+              {{user.OdaNo}}
+              {{user.OdaTip}}
+            </th>
+            <th class="general_row2">
+              {{user.Title}}
+              {{user.FirstName}} {{user.LastName}}
+            </th>
+            <th class="general_row3">{{user.FromDate | date:'dd MMMM yyyy'}}</th>
+            <th class="general_row3">{{user.ToDate   | date:'dd MMMM yyyy'}}</th>
           </tr>
         </tbody>
       </table>
