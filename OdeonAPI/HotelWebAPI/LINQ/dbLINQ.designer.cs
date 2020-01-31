@@ -36,6 +36,9 @@ namespace HotelWebAPI.LINQ
     partial void InsertMUSTERI(MUSTERI instance);
     partial void UpdateMUSTERI(MUSTERI instance);
     partial void DeleteMUSTERI(MUSTERI instance);
+    partial void InsertTHEDATE(THEDATE instance);
+    partial void UpdateTHEDATE(THEDATE instance);
+    partial void DeleteTHEDATE(THEDATE instance);
     #endregion
 		
 		public dbLINQDataContext() : 
@@ -89,6 +92,14 @@ namespace HotelWebAPI.LINQ
 			get
 			{
 				return this.GetTable<ROOMVIEW>();
+			}
+		}
+		
+		public System.Data.Linq.Table<THEDATE> THEDATE
+		{
+			get
+			{
+				return this.GetTable<THEDATE>();
 			}
 		}
 	}
@@ -7122,6 +7133,212 @@ namespace HotelWebAPI.LINQ
 				{
 					this._OO = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THEDATE")]
+	public partial class THEDATE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.DateTime _ODEONDATE;
+		
+		private System.Nullable<System.DateTime> _ARDATE;
+		
+		private System.Nullable<decimal> _ARLOCK;
+		
+		private System.Nullable<decimal> _NA_START;
+		
+		private System.Nullable<System.DateTime> _S_DATE;
+		
+		private System.Nullable<System.DateTime> _E_DATE;
+		
+		private string _COMPANYINFO;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnODEONDATEChanging(System.DateTime value);
+    partial void OnODEONDATEChanged();
+    partial void OnARDATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnARDATEChanged();
+    partial void OnARLOCKChanging(System.Nullable<decimal> value);
+    partial void OnARLOCKChanged();
+    partial void OnNA_STARTChanging(System.Nullable<decimal> value);
+    partial void OnNA_STARTChanged();
+    partial void OnS_DATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnS_DATEChanged();
+    partial void OnE_DATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnE_DATEChanged();
+    partial void OnCOMPANYINFOChanging(string value);
+    partial void OnCOMPANYINFOChanged();
+    #endregion
+		
+		public THEDATE()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ODEONDATE", DbType="DateTime NOT NULL", IsPrimaryKey=true)]
+		public System.DateTime ODEONDATE
+		{
+			get
+			{
+				return this._ODEONDATE;
+			}
+			set
+			{
+				if ((this._ODEONDATE != value))
+				{
+					this.OnODEONDATEChanging(value);
+					this.SendPropertyChanging();
+					this._ODEONDATE = value;
+					this.SendPropertyChanged("ODEONDATE");
+					this.OnODEONDATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ARDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ARDATE
+		{
+			get
+			{
+				return this._ARDATE;
+			}
+			set
+			{
+				if ((this._ARDATE != value))
+				{
+					this.OnARDATEChanging(value);
+					this.SendPropertyChanging();
+					this._ARDATE = value;
+					this.SendPropertyChanged("ARDATE");
+					this.OnARDATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ARLOCK", DbType="Decimal(19,0)")]
+		public System.Nullable<decimal> ARLOCK
+		{
+			get
+			{
+				return this._ARLOCK;
+			}
+			set
+			{
+				if ((this._ARLOCK != value))
+				{
+					this.OnARLOCKChanging(value);
+					this.SendPropertyChanging();
+					this._ARLOCK = value;
+					this.SendPropertyChanged("ARLOCK");
+					this.OnARLOCKChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NA_START", DbType="Decimal(19,0)")]
+		public System.Nullable<decimal> NA_START
+		{
+			get
+			{
+				return this._NA_START;
+			}
+			set
+			{
+				if ((this._NA_START != value))
+				{
+					this.OnNA_STARTChanging(value);
+					this.SendPropertyChanging();
+					this._NA_START = value;
+					this.SendPropertyChanged("NA_START");
+					this.OnNA_STARTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_S_DATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> S_DATE
+		{
+			get
+			{
+				return this._S_DATE;
+			}
+			set
+			{
+				if ((this._S_DATE != value))
+				{
+					this.OnS_DATEChanging(value);
+					this.SendPropertyChanging();
+					this._S_DATE = value;
+					this.SendPropertyChanged("S_DATE");
+					this.OnS_DATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_E_DATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> E_DATE
+		{
+			get
+			{
+				return this._E_DATE;
+			}
+			set
+			{
+				if ((this._E_DATE != value))
+				{
+					this.OnE_DATEChanging(value);
+					this.SendPropertyChanging();
+					this._E_DATE = value;
+					this.SendPropertyChanged("E_DATE");
+					this.OnE_DATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COMPANYINFO", DbType="VarChar(255)")]
+		public string COMPANYINFO
+		{
+			get
+			{
+				return this._COMPANYINFO;
+			}
+			set
+			{
+				if ((this._COMPANYINFO != value))
+				{
+					this.OnCOMPANYINFOChanging(value);
+					this.SendPropertyChanging();
+					this._COMPANYINFO = value;
+					this.SendPropertyChanged("COMPANYINFO");
+					this.OnCOMPANYINFOChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

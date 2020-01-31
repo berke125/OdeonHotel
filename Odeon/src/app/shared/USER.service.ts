@@ -33,8 +33,8 @@ export class UserService
   {
     return this._http.get(this.rootURL + '/RoomView?roomsfilter='+val);
   }
-  GetFullRoom()
+  GetDate()
   {
-
+    return this._http.get(this.rootURL);
   }
 }
