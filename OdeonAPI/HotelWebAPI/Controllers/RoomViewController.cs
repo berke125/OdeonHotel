@@ -13,17 +13,53 @@ namespace HotelWebAPI.Controllers
     {
         private dbLINQDataContext db = new dbLINQDataContext();
 
+        //public List<RoomPoco> GetRoom()
+        //{
+        //    List<ROOMVIEW> roomdblist = (from x in db.ROOMVIEW
+
+        //                                 orderby x.ODANO
+        //                                 select x).ToList();
+
+        //    List<RoomPoco> roomlistPoco = new List<RoomPoco>();
+        //    foreach (var roomdb in roomdblist)
+        //    {
+        //        string odano = roomdb.ODANO;
+        //        RoomPoco roomPoco = new RoomPoco
+        //        {
+        //            OdaNo = roomdb.ODANO,
+        //            OdaTip = roomdb.ODATIP,
+        //            No = Convert.ToInt32(roomdb.NO),
+        //            Title = roomdb.TITLE,
+        //            FirstName = roomdb.FIRSTNAME,
+        //            LastName = roomdb.LASTNAME,
+        //            FromDate = roomdb.FROMDATE,
+        //            ToDate = roomdb.TODATE
+        //        };
+
+        //        roomlistPoco.Add(roomPoco);
+        //    }
+
+
+        //    return roomlistPoco;
+        //}
         public List<RoomPoco> GetRoom()
         {
             List<ROOMVIEW> roomdblist = (from x in db.ROOMVIEW
 
                                          orderby x.ODANO
                                          select x).ToList();
-
+            THEDATE theDate = (from x in db.THEDATE
+                               orderby x.ODEONDATE descending
+                               select x).First();
             List<RoomPoco> roomlistPoco = new List<RoomPoco>();
             foreach (var roomdb in roomdblist)
             {
-                string odano = roomdb.ODANO;
+                bool IsEndDate = false;
+                bool IsFromDate = false;
+                if (roomdb.TODATE == theDate.ODEONDATE)
+                    IsEndDate = true;
+                if (roomdb.FROMDATE == theDate.ODEONDATE)
+                    IsFromDate = true;
                 RoomPoco roomPoco = new RoomPoco
                 {
                     OdaNo = roomdb.ODANO,
@@ -33,7 +69,9 @@ namespace HotelWebAPI.Controllers
                     FirstName = roomdb.FIRSTNAME,
                     LastName = roomdb.LASTNAME,
                     FromDate = roomdb.FROMDATE,
-                    ToDate = roomdb.TODATE
+                    ToDate = roomdb.TODATE,
+                    IsEndDate = IsEndDate,
+                    IsFromDate = IsFromDate
                 };
 
                 roomlistPoco.Add(roomPoco);
@@ -48,13 +86,13 @@ namespace HotelWebAPI.Controllers
             switch (roomsfilter)
             {
                 case "1":
-                    roomdblist = (from x in db.ROOMVIEW 
+                    roomdblist = (from x in db.ROOMVIEW
                                   orderby x.ODANO
                                   select x).ToList();
                     break;
                 case "2":
                     roomdblist = (from x in db.ROOMVIEW
-                                  where  (x.LASTNAME == "" || x.LASTNAME == null)
+                                  where (x.LASTNAME == "" || x.LASTNAME == null)
                                   orderby x.ODANO
                                   select x).ToList();
                     break;
@@ -64,12 +102,34 @@ namespace HotelWebAPI.Controllers
                                   orderby x.ODANO
                                   select x).ToList();
                     break;
+                case "4":
+                    roomdblist = (from x in db.ROOMVIEW
+                                  from y in db.THEDATE
+                                  where ((x.LASTNAME != "" || x.LASTNAME != null)&&(x.FROMDATE==y.ODEONDATE))
+                                  orderby x.ODANO
+                                  select x).ToList();
+                    break;
+                case "5":
+                    roomdblist = (from x in db.ROOMVIEW
+                                  from y in db.THEDATE
+                                  where ((x.LASTNAME != "" || x.LASTNAME != null) && (x.TODATE == y.ODEONDATE))
+                                  orderby x.ODANO
+                                  select x).ToList();
+                    break;
             }
-             
+            THEDATE theDate = (from x in db.THEDATE
+                               orderby x.ODEONDATE descending
+                               select x).First();
             List<RoomPoco> roomlistPoco = new List<RoomPoco>();
             foreach (var roomdb in roomdblist)
             {
-                string odano = roomdb.ODANO;
+                //string odano = roomdb.ODANO;
+                bool IsEndDate = false;
+                bool IsFromDate = false;
+                if (roomdb.TODATE == theDate.ODEONDATE)
+                    IsEndDate = true;
+                if (roomdb.FROMDATE == theDate.ODEONDATE)
+                    IsFromDate = true;
                 RoomPoco roomPoco = new RoomPoco
                 {
                     OdaNo = roomdb.ODANO,
@@ -79,7 +139,9 @@ namespace HotelWebAPI.Controllers
                     FirstName = roomdb.FIRSTNAME,
                     LastName = roomdb.LASTNAME,
                     FromDate = roomdb.FROMDATE,
-                    ToDate = roomdb.TODATE
+                    ToDate = roomdb.TODATE,
+                    IsEndDate = IsEndDate,
+                    IsFromDate = IsFromDate
                 };
 
                 roomlistPoco.Add(roomPoco);

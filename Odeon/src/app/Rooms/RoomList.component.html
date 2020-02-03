@@ -1,6 +1,6 @@
 <style>
-  #MainContent {
-    width: 800px;
+  .MainContent {
+    width: 850px;
     padding-left: 100px;
     margin: 0px;
     padding-top: 5px;
@@ -10,14 +10,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  button {
-    background-color: lightskyblue;
-    font-style: normal;
-    font-size: 12pt;
-    font-family: Tahoma;
-    color: brown;
   }
 
   mark {
@@ -47,36 +39,70 @@
     padding-right: 10px;
   }
 
-  .infobox {
-    padding-left: 300px;
-    padding-bottom:5px;
+  .general_row4 {
+    padding-left: 5px;
+    padding-right: 10px;
   }
-  .radio_table_space
-  {
-    padding-top:7px;
+
+  .infobox1 {
+    padding-left: 0px;
+    padding-bottom: 5px;
   }
-  coloredToDate {
-    color:red;
+
+  .infobox2 {
+    padding-left: 30px;
+    padding-bottom: 5px;
   }
+
+  .infobox3 {
+    padding-left: 30px;
+    padding-bottom: 5px;
+  }
+
+  .infobox4 {
+    padding-left: 30px;
+    padding-bottom: 5px;
+  }
+
+  .infobox5 {
+    padding-left: 30px;
+    padding-bottom: 5px;
+  }
+
+  .radio_table_space {
+    padding-top: 0px;
+    display: inline-flex;
+    flex-direction: row;
+  }
+
+  .room-row {
+    padding-left: 25px;
+  }
+
+  .dates-row {
+    padding-left: 30px;
+  }
+ 
+ 
 </style>
-<form class="example-form">
+<form>
   <div class="center">
-    <div id="MainContent">
-      <mat-radio-group [(ngModel)]="myModel" [ngModelOptions]="{standalone: true}" (ngModelChange)=" EmptyRooms()" aria-label="Select an option">
-        <mat-radio-button class="infobox"   value="1">Tüm Odalar</mat-radio-button>
-        
-        <mat-radio-button class="infobox"  value="2">Boş Odalar</mat-radio-button>
-        
-        <mat-radio-button class="infobox"  value="3">Dolu Odalar</mat-radio-button>
+    <div class="MainContent">
+      <mat-radio-group class="radio_table_space" [(ngModel)]="myModel" [ngModelOptions]="{standalone: true}" (ngModelChange)=" EmptyRooms()" aria-label="Select an option">
+        <mat-radio-button color="primary" class="infobox1" value="1">Tüm Odalar</mat-radio-button>
+        <mat-radio-button color="primary" class="infobox2" value="2">Boş Odalar</mat-radio-button>
+        <mat-radio-button color="primary" class="infobox3" value="3">Dolu Odalar</mat-radio-button>
+        <mat-radio-button color="primary" class="infobox4" value="4">Bugün Girenler</mat-radio-button>
+        <mat-radio-button color="primary" class="infobox5" value="5">Bugün Çıkanlar</mat-radio-button>
       </mat-radio-group>
-      <div class="radio_table_space"></div>
+
       <table class="table">
         <thead>
           <tr>
-            <th>Oda_No</th>
+            <th class="room-row">Oda_No</th>
             <th class="general_row">Misafir</th>
-            <th>Giriş Tarihi</th>
-            <th>Çıkış Tarihi</th>
+            <th class="dates-row">Giriş Tarihi</th>
+            <th class="dates-row">Çıkış Tarihi</th>
           </tr>
         </thead>
         <tbody>
@@ -89,8 +115,8 @@
               {{user.Title}}
               {{user.FirstName}} {{user.LastName}}
             </th>
-            <th class="general_row3">{{user.FromDate | date:'dd MMMM yyyy'}}</th>
-            <th class="general_row3">{{user.ToDate   | date:'dd MMMM yyyy'}}</th>
+            <th [ngStyle]="{'color': user.IsFromDate===true ?'green':'black'}" class="general_row3">{{user.FromDate | date:'dd MMMM yyyy'}}</th>
+            <th [ngStyle]="{'color': user.IsEndDate===true  ?'red':'black'}" class="general_row4">{{user.ToDate   | date:'dd MMMM yyyy'}}</th>
           </tr>
         </tbody>
       </table>

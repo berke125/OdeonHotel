@@ -16,5 +16,7 @@ namespace HotelWebAPI.Models
         public string Title { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public bool IsEndDate { get; set; }
+        public bool IsFromDate { get; set; }
     }
 }
