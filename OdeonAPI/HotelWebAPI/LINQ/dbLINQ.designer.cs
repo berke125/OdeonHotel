@@ -22,7 +22,7 @@ namespace HotelWebAPI.LINQ
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="CESTUR")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="KARTAL")]
 	public partial class dbLINQDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -30,19 +30,19 @@ namespace HotelWebAPI.LINQ
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertTHEDATE(THEDATE instance);
+    partial void UpdateTHEDATE(THEDATE instance);
+    partial void DeleteTHEDATE(THEDATE instance);
     partial void InsertUSERS(USERS instance);
     partial void UpdateUSERS(USERS instance);
     partial void DeleteUSERS(USERS instance);
     partial void InsertMUSTERI(MUSTERI instance);
     partial void UpdateMUSTERI(MUSTERI instance);
     partial void DeleteMUSTERI(MUSTERI instance);
-    partial void InsertTHEDATE(THEDATE instance);
-    partial void UpdateTHEDATE(THEDATE instance);
-    partial void DeleteTHEDATE(THEDATE instance);
     #endregion
 		
 		public dbLINQDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["CESTURConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["CESTURConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -71,6 +71,14 @@ namespace HotelWebAPI.LINQ
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<THEDATE> THEDATE
+		{
+			get
+			{
+				return this.GetTable<THEDATE>();
+			}
+		}
+		
 		public System.Data.Linq.Table<USERS> USERS
 		{
 			get
@@ -94,12 +102,210 @@ namespace HotelWebAPI.LINQ
 				return this.GetTable<ROOMVIEW>();
 			}
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THEDATE")]
+	public partial class THEDATE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		public System.Data.Linq.Table<THEDATE> THEDATE
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.DateTime _ODEONDATE;
+		
+		private System.Nullable<System.DateTime> _ARDATE;
+		
+		private System.Nullable<decimal> _ARLOCK;
+		
+		private System.Nullable<decimal> _NA_START;
+		
+		private System.Nullable<System.DateTime> _S_DATE;
+		
+		private System.Nullable<System.DateTime> _E_DATE;
+		
+		private string _COMPANYINFO;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnODEONDATEChanging(System.DateTime value);
+    partial void OnODEONDATEChanged();
+    partial void OnARDATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnARDATEChanged();
+    partial void OnARLOCKChanging(System.Nullable<decimal> value);
+    partial void OnARLOCKChanged();
+    partial void OnNA_STARTChanging(System.Nullable<decimal> value);
+    partial void OnNA_STARTChanged();
+    partial void OnS_DATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnS_DATEChanged();
+    partial void OnE_DATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnE_DATEChanged();
+    partial void OnCOMPANYINFOChanging(string value);
+    partial void OnCOMPANYINFOChanged();
+    #endregion
+		
+		public THEDATE()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ODEONDATE", DbType="DateTime NOT NULL", IsPrimaryKey=true)]
+		public System.DateTime ODEONDATE
 		{
 			get
 			{
-				return this.GetTable<THEDATE>();
+				return this._ODEONDATE;
+			}
+			set
+			{
+				if ((this._ODEONDATE != value))
+				{
+					this.OnODEONDATEChanging(value);
+					this.SendPropertyChanging();
+					this._ODEONDATE = value;
+					this.SendPropertyChanged("ODEONDATE");
+					this.OnODEONDATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ARDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ARDATE
+		{
+			get
+			{
+				return this._ARDATE;
+			}
+			set
+			{
+				if ((this._ARDATE != value))
+				{
+					this.OnARDATEChanging(value);
+					this.SendPropertyChanging();
+					this._ARDATE = value;
+					this.SendPropertyChanged("ARDATE");
+					this.OnARDATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ARLOCK", DbType="Decimal(19,0)")]
+		public System.Nullable<decimal> ARLOCK
+		{
+			get
+			{
+				return this._ARLOCK;
+			}
+			set
+			{
+				if ((this._ARLOCK != value))
+				{
+					this.OnARLOCKChanging(value);
+					this.SendPropertyChanging();
+					this._ARLOCK = value;
+					this.SendPropertyChanged("ARLOCK");
+					this.OnARLOCKChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NA_START", DbType="Decimal(19,0)")]
+		public System.Nullable<decimal> NA_START
+		{
+			get
+			{
+				return this._NA_START;
+			}
+			set
+			{
+				if ((this._NA_START != value))
+				{
+					this.OnNA_STARTChanging(value);
+					this.SendPropertyChanging();
+					this._NA_START = value;
+					this.SendPropertyChanged("NA_START");
+					this.OnNA_STARTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_S_DATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> S_DATE
+		{
+			get
+			{
+				return this._S_DATE;
+			}
+			set
+			{
+				if ((this._S_DATE != value))
+				{
+					this.OnS_DATEChanging(value);
+					this.SendPropertyChanging();
+					this._S_DATE = value;
+					this.SendPropertyChanged("S_DATE");
+					this.OnS_DATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_E_DATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> E_DATE
+		{
+			get
+			{
+				return this._E_DATE;
+			}
+			set
+			{
+				if ((this._E_DATE != value))
+				{
+					this.OnE_DATEChanging(value);
+					this.SendPropertyChanging();
+					this._E_DATE = value;
+					this.SendPropertyChanged("E_DATE");
+					this.OnE_DATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COMPANYINFO", DbType="VarChar(255)")]
+		public string COMPANYINFO
+		{
+			get
+			{
+				return this._COMPANYINFO;
+			}
+			set
+			{
+				if ((this._COMPANYINFO != value))
+				{
+					this.OnCOMPANYINFOChanging(value);
+					this.SendPropertyChanging();
+					this._COMPANYINFO = value;
+					this.SendPropertyChanged("COMPANYINFO");
+					this.OnCOMPANYINFOChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -1096,17 +1302,13 @@ namespace HotelWebAPI.LINQ
 		
 		private string _POSCARDID;
 		
+		private System.Nullable<decimal> _ACOOUNTID;
+		
 		private string _DEFCHANNEL;
 		
 		private System.Nullable<int> _DEFSTAYTYPE;
 		
 		private System.Nullable<int> _DEFSTATUS;
-		
-		private string _EMAIL;
-		
-		private string _PASSWORD;
-		
-		private string _CONTACTNAME;
 		
 		private string _ORIGINCITY;
 		
@@ -1115,6 +1317,12 @@ namespace HotelWebAPI.LINQ
 		private string _SCHOOLDEPARTMENT;
 		
 		private string _SCHOOLCLASS;
+		
+		private string _EMAIL;
+		
+		private string _PASSWORD;
+		
+		private string _CONTACTNAME;
 		
 		private string _MIDNAME;
 		
@@ -1144,10 +1352,6 @@ namespace HotelWebAPI.LINQ
 		
 		private string _CONTACT_TOWN;
 		
-		private System.Nullable<decimal> _ACOOUNTID;
-		
-		private string _CHN_CODE;
-		
 		private string _STUDENTREMARK;
 		
 		private string _CONTACT_JOB;
@@ -1158,6 +1362,14 @@ namespace HotelWebAPI.LINQ
 		
 		private string _ADDRESS_TOWN;
 		
+		private string _CHN_CODE;
+		
+		private string _CRM_DISTRICT;
+		
+		private string _CRM_CATEGORY;
+		
+		private System.Nullable<decimal> _MERGED;
+		
 		private string _CONTACT_SOCIAL_SECURITY;
 		
 		private string _CONTACT_1_NAME;
@@ -1165,12 +1377,6 @@ namespace HotelWebAPI.LINQ
 		private string _CONTACT_1_RELATION;
 		
 		private string _CONTACT_1_TEL;
-		
-		private string _CRM_DISTRICT;
-		
-		private string _CRM_CATEGORY;
-		
-		private System.Nullable<int> _PROFILE_PUBLIC;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1452,18 +1658,14 @@ namespace HotelWebAPI.LINQ
     partial void OnBO_PAYMENT_CURRENCYChanged();
     partial void OnPOSCARDIDChanging(string value);
     partial void OnPOSCARDIDChanged();
+    partial void OnACOOUNTIDChanging(System.Nullable<decimal> value);
+    partial void OnACOOUNTIDChanged();
     partial void OnDEFCHANNELChanging(string value);
     partial void OnDEFCHANNELChanged();
     partial void OnDEFSTAYTYPEChanging(System.Nullable<int> value);
     partial void OnDEFSTAYTYPEChanged();
     partial void OnDEFSTATUSChanging(System.Nullable<int> value);
     partial void OnDEFSTATUSChanged();
-    partial void OnEMAILChanging(string value);
-    partial void OnEMAILChanged();
-    partial void OnPASSWORDChanging(string value);
-    partial void OnPASSWORDChanged();
-    partial void OnCONTACTNAMEChanging(string value);
-    partial void OnCONTACTNAMEChanged();
     partial void OnORIGINCITYChanging(string value);
     partial void OnORIGINCITYChanged();
     partial void OnSCHOOLChanging(string value);
@@ -1472,6 +1674,12 @@ namespace HotelWebAPI.LINQ
     partial void OnSCHOOLDEPARTMENTChanged();
     partial void OnSCHOOLCLASSChanging(string value);
     partial void OnSCHOOLCLASSChanged();
+    partial void OnEMAILChanging(string value);
+    partial void OnEMAILChanged();
+    partial void OnPASSWORDChanging(string value);
+    partial void OnPASSWORDChanged();
+    partial void OnCONTACTNAMEChanging(string value);
+    partial void OnCONTACTNAMEChanged();
     partial void OnMIDNAMEChanging(string value);
     partial void OnMIDNAMEChanged();
     partial void OnSMOKINGChanging(string value);
@@ -1500,10 +1708,6 @@ namespace HotelWebAPI.LINQ
     partial void OnCONTACT_CITYChanged();
     partial void OnCONTACT_TOWNChanging(string value);
     partial void OnCONTACT_TOWNChanged();
-    partial void OnACOOUNTIDChanging(System.Nullable<decimal> value);
-    partial void OnACOOUNTIDChanged();
-    partial void OnCHN_CODEChanging(string value);
-    partial void OnCHN_CODEChanged();
     partial void OnSTUDENTREMARKChanging(string value);
     partial void OnSTUDENTREMARKChanged();
     partial void OnCONTACT_JOBChanging(string value);
@@ -1514,6 +1718,14 @@ namespace HotelWebAPI.LINQ
     partial void OnMAJORDISEASESChanged();
     partial void OnADDRESS_TOWNChanging(string value);
     partial void OnADDRESS_TOWNChanged();
+    partial void OnCHN_CODEChanging(string value);
+    partial void OnCHN_CODEChanged();
+    partial void OnCRM_DISTRICTChanging(string value);
+    partial void OnCRM_DISTRICTChanged();
+    partial void OnCRM_CATEGORYChanging(string value);
+    partial void OnCRM_CATEGORYChanged();
+    partial void OnMERGEDChanging(System.Nullable<decimal> value);
+    partial void OnMERGEDChanged();
     partial void OnCONTACT_SOCIAL_SECURITYChanging(string value);
     partial void OnCONTACT_SOCIAL_SECURITYChanged();
     partial void OnCONTACT_1_NAMEChanging(string value);
@@ -1522,12 +1734,6 @@ namespace HotelWebAPI.LINQ
     partial void OnCONTACT_1_RELATIONChanged();
     partial void OnCONTACT_1_TELChanging(string value);
     partial void OnCONTACT_1_TELChanged();
-    partial void OnCRM_DISTRICTChanging(string value);
-    partial void OnCRM_DISTRICTChanged();
-    partial void OnCRM_CATEGORYChanging(string value);
-    partial void OnCRM_CATEGORYChanged();
-    partial void OnPROFILE_PUBLICChanging(System.Nullable<int> value);
-    partial void OnPROFILE_PUBLICChanged();
     #endregion
 		
 		public MUSTERI()
@@ -4295,6 +4501,26 @@ namespace HotelWebAPI.LINQ
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ACOOUNTID", DbType="Decimal(19,0)")]
+		public System.Nullable<decimal> ACOOUNTID
+		{
+			get
+			{
+				return this._ACOOUNTID;
+			}
+			set
+			{
+				if ((this._ACOOUNTID != value))
+				{
+					this.OnACOOUNTIDChanging(value);
+					this.SendPropertyChanging();
+					this._ACOOUNTID = value;
+					this.SendPropertyChanged("ACOOUNTID");
+					this.OnACOOUNTIDChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DEFCHANNEL", DbType="VarChar(25)")]
 		public string DEFCHANNEL
 		{
@@ -4351,6 +4577,86 @@ namespace HotelWebAPI.LINQ
 					this._DEFSTATUS = value;
 					this.SendPropertyChanged("DEFSTATUS");
 					this.OnDEFSTATUSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ORIGINCITY", DbType="VarChar(250)")]
+		public string ORIGINCITY
+		{
+			get
+			{
+				return this._ORIGINCITY;
+			}
+			set
+			{
+				if ((this._ORIGINCITY != value))
+				{
+					this.OnORIGINCITYChanging(value);
+					this.SendPropertyChanging();
+					this._ORIGINCITY = value;
+					this.SendPropertyChanged("ORIGINCITY");
+					this.OnORIGINCITYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SCHOOL", DbType="VarChar(250)")]
+		public string SCHOOL
+		{
+			get
+			{
+				return this._SCHOOL;
+			}
+			set
+			{
+				if ((this._SCHOOL != value))
+				{
+					this.OnSCHOOLChanging(value);
+					this.SendPropertyChanging();
+					this._SCHOOL = value;
+					this.SendPropertyChanged("SCHOOL");
+					this.OnSCHOOLChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SCHOOLDEPARTMENT", DbType="VarChar(250)")]
+		public string SCHOOLDEPARTMENT
+		{
+			get
+			{
+				return this._SCHOOLDEPARTMENT;
+			}
+			set
+			{
+				if ((this._SCHOOLDEPARTMENT != value))
+				{
+					this.OnSCHOOLDEPARTMENTChanging(value);
+					this.SendPropertyChanging();
+					this._SCHOOLDEPARTMENT = value;
+					this.SendPropertyChanged("SCHOOLDEPARTMENT");
+					this.OnSCHOOLDEPARTMENTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SCHOOLCLASS", DbType="VarChar(250)")]
+		public string SCHOOLCLASS
+		{
+			get
+			{
+				return this._SCHOOLCLASS;
+			}
+			set
+			{
+				if ((this._SCHOOLCLASS != value))
+				{
+					this.OnSCHOOLCLASSChanging(value);
+					this.SendPropertyChanging();
+					this._SCHOOLCLASS = value;
+					this.SendPropertyChanged("SCHOOLCLASS");
+					this.OnSCHOOLCLASSChanged();
 				}
 			}
 		}
@@ -4415,86 +4721,6 @@ namespace HotelWebAPI.LINQ
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ORIGINCITY", DbType="VarChar(50)")]
-		public string ORIGINCITY
-		{
-			get
-			{
-				return this._ORIGINCITY;
-			}
-			set
-			{
-				if ((this._ORIGINCITY != value))
-				{
-					this.OnORIGINCITYChanging(value);
-					this.SendPropertyChanging();
-					this._ORIGINCITY = value;
-					this.SendPropertyChanged("ORIGINCITY");
-					this.OnORIGINCITYChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SCHOOL", DbType="VarChar(50)")]
-		public string SCHOOL
-		{
-			get
-			{
-				return this._SCHOOL;
-			}
-			set
-			{
-				if ((this._SCHOOL != value))
-				{
-					this.OnSCHOOLChanging(value);
-					this.SendPropertyChanging();
-					this._SCHOOL = value;
-					this.SendPropertyChanged("SCHOOL");
-					this.OnSCHOOLChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SCHOOLDEPARTMENT", DbType="VarChar(50)")]
-		public string SCHOOLDEPARTMENT
-		{
-			get
-			{
-				return this._SCHOOLDEPARTMENT;
-			}
-			set
-			{
-				if ((this._SCHOOLDEPARTMENT != value))
-				{
-					this.OnSCHOOLDEPARTMENTChanging(value);
-					this.SendPropertyChanging();
-					this._SCHOOLDEPARTMENT = value;
-					this.SendPropertyChanged("SCHOOLDEPARTMENT");
-					this.OnSCHOOLDEPARTMENTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SCHOOLCLASS", DbType="VarChar(5)")]
-		public string SCHOOLCLASS
-		{
-			get
-			{
-				return this._SCHOOLCLASS;
-			}
-			set
-			{
-				if ((this._SCHOOLCLASS != value))
-				{
-					this.OnSCHOOLCLASSChanging(value);
-					this.SendPropertyChanging();
-					this._SCHOOLCLASS = value;
-					this.SendPropertyChanged("SCHOOLCLASS");
-					this.OnSCHOOLCLASSChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MIDNAME", DbType="VarChar(50)")]
 		public string MIDNAME
 		{
@@ -4515,7 +4741,7 @@ namespace HotelWebAPI.LINQ
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SMOKING", DbType="VarChar(5)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SMOKING", DbType="VarChar(1)")]
 		public string SMOKING
 		{
 			get
@@ -4615,7 +4841,7 @@ namespace HotelWebAPI.LINQ
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BO_PAYMENT_CURR", DbType="VarChar(5)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BO_PAYMENT_CURR", DbType="VarChar(50)")]
 		public string BO_PAYMENT_CURR
 		{
 			get
@@ -4775,46 +5001,6 @@ namespace HotelWebAPI.LINQ
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ACOOUNTID", DbType="Decimal(19,0)")]
-		public System.Nullable<decimal> ACOOUNTID
-		{
-			get
-			{
-				return this._ACOOUNTID;
-			}
-			set
-			{
-				if ((this._ACOOUNTID != value))
-				{
-					this.OnACOOUNTIDChanging(value);
-					this.SendPropertyChanging();
-					this._ACOOUNTID = value;
-					this.SendPropertyChanged("ACOOUNTID");
-					this.OnACOOUNTIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHN_CODE", DbType="VarChar(40)")]
-		public string CHN_CODE
-		{
-			get
-			{
-				return this._CHN_CODE;
-			}
-			set
-			{
-				if ((this._CHN_CODE != value))
-				{
-					this.OnCHN_CODEChanging(value);
-					this.SendPropertyChanging();
-					this._CHN_CODE = value;
-					this.SendPropertyChanged("CHN_CODE");
-					this.OnCHN_CODEChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STUDENTREMARK", DbType="NVarChar(100)")]
 		public string STUDENTREMARK
 		{
@@ -4915,6 +5101,86 @@ namespace HotelWebAPI.LINQ
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHN_CODE", DbType="VarChar(40)")]
+		public string CHN_CODE
+		{
+			get
+			{
+				return this._CHN_CODE;
+			}
+			set
+			{
+				if ((this._CHN_CODE != value))
+				{
+					this.OnCHN_CODEChanging(value);
+					this.SendPropertyChanging();
+					this._CHN_CODE = value;
+					this.SendPropertyChanged("CHN_CODE");
+					this.OnCHN_CODEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRM_DISTRICT", DbType="VarChar(40)")]
+		public string CRM_DISTRICT
+		{
+			get
+			{
+				return this._CRM_DISTRICT;
+			}
+			set
+			{
+				if ((this._CRM_DISTRICT != value))
+				{
+					this.OnCRM_DISTRICTChanging(value);
+					this.SendPropertyChanging();
+					this._CRM_DISTRICT = value;
+					this.SendPropertyChanged("CRM_DISTRICT");
+					this.OnCRM_DISTRICTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRM_CATEGORY", DbType="VarChar(40)")]
+		public string CRM_CATEGORY
+		{
+			get
+			{
+				return this._CRM_CATEGORY;
+			}
+			set
+			{
+				if ((this._CRM_CATEGORY != value))
+				{
+					this.OnCRM_CATEGORYChanging(value);
+					this.SendPropertyChanging();
+					this._CRM_CATEGORY = value;
+					this.SendPropertyChanged("CRM_CATEGORY");
+					this.OnCRM_CATEGORYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MERGED", DbType="Decimal(19,0)")]
+		public System.Nullable<decimal> MERGED
+		{
+			get
+			{
+				return this._MERGED;
+			}
+			set
+			{
+				if ((this._MERGED != value))
+				{
+					this.OnMERGEDChanging(value);
+					this.SendPropertyChanging();
+					this._MERGED = value;
+					this.SendPropertyChanged("MERGED");
+					this.OnMERGEDChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CONTACT_SOCIAL_SECURITY", DbType="NVarChar(50)")]
 		public string CONTACT_SOCIAL_SECURITY
 		{
@@ -4991,66 +5257,6 @@ namespace HotelWebAPI.LINQ
 					this._CONTACT_1_TEL = value;
 					this.SendPropertyChanged("CONTACT_1_TEL");
 					this.OnCONTACT_1_TELChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRM_DISTRICT", DbType="VarChar(40)")]
-		public string CRM_DISTRICT
-		{
-			get
-			{
-				return this._CRM_DISTRICT;
-			}
-			set
-			{
-				if ((this._CRM_DISTRICT != value))
-				{
-					this.OnCRM_DISTRICTChanging(value);
-					this.SendPropertyChanging();
-					this._CRM_DISTRICT = value;
-					this.SendPropertyChanged("CRM_DISTRICT");
-					this.OnCRM_DISTRICTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRM_CATEGORY", DbType="VarChar(40)")]
-		public string CRM_CATEGORY
-		{
-			get
-			{
-				return this._CRM_CATEGORY;
-			}
-			set
-			{
-				if ((this._CRM_CATEGORY != value))
-				{
-					this.OnCRM_CATEGORYChanging(value);
-					this.SendPropertyChanging();
-					this._CRM_CATEGORY = value;
-					this.SendPropertyChanged("CRM_CATEGORY");
-					this.OnCRM_CATEGORYChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PROFILE_PUBLIC", DbType="Int")]
-		public System.Nullable<int> PROFILE_PUBLIC
-		{
-			get
-			{
-				return this._PROFILE_PUBLIC;
-			}
-			set
-			{
-				if ((this._PROFILE_PUBLIC != value))
-				{
-					this.OnPROFILE_PUBLICChanging(value);
-					this.SendPropertyChanging();
-					this._PROFILE_PUBLIC = value;
-					this.SendPropertyChanged("PROFILE_PUBLIC");
-					this.OnPROFILE_PUBLICChanged();
 				}
 			}
 		}
@@ -5279,8 +5485,6 @@ namespace HotelWebAPI.LINQ
 		private System.Nullable<decimal> _SHAREMASTER;
 		
 		private System.Nullable<int> _SHARESLAVE;
-		
-		private string _MARKET;
 		
 		private string @__COUT_TOTIME;
 		
@@ -6912,22 +7116,6 @@ namespace HotelWebAPI.LINQ
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MARKET", DbType="VarChar(250)")]
-		public string MARKET
-		{
-			get
-			{
-				return this._MARKET;
-			}
-			set
-			{
-				if ((this._MARKET != value))
-				{
-					this._MARKET = value;
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[_COUT_TOTIME]", Storage="__COUT_TOTIME", DbType="VarChar(14)")]
 		public string _COUT_TOTIME
 		{
@@ -7133,212 +7321,6 @@ namespace HotelWebAPI.LINQ
 				{
 					this._OO = value;
 				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THEDATE")]
-	public partial class THEDATE : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.DateTime _ODEONDATE;
-		
-		private System.Nullable<System.DateTime> _ARDATE;
-		
-		private System.Nullable<decimal> _ARLOCK;
-		
-		private System.Nullable<decimal> _NA_START;
-		
-		private System.Nullable<System.DateTime> _S_DATE;
-		
-		private System.Nullable<System.DateTime> _E_DATE;
-		
-		private string _COMPANYINFO;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnODEONDATEChanging(System.DateTime value);
-    partial void OnODEONDATEChanged();
-    partial void OnARDATEChanging(System.Nullable<System.DateTime> value);
-    partial void OnARDATEChanged();
-    partial void OnARLOCKChanging(System.Nullable<decimal> value);
-    partial void OnARLOCKChanged();
-    partial void OnNA_STARTChanging(System.Nullable<decimal> value);
-    partial void OnNA_STARTChanged();
-    partial void OnS_DATEChanging(System.Nullable<System.DateTime> value);
-    partial void OnS_DATEChanged();
-    partial void OnE_DATEChanging(System.Nullable<System.DateTime> value);
-    partial void OnE_DATEChanged();
-    partial void OnCOMPANYINFOChanging(string value);
-    partial void OnCOMPANYINFOChanged();
-    #endregion
-		
-		public THEDATE()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ODEONDATE", DbType="DateTime NOT NULL", IsPrimaryKey=true)]
-		public System.DateTime ODEONDATE
-		{
-			get
-			{
-				return this._ODEONDATE;
-			}
-			set
-			{
-				if ((this._ODEONDATE != value))
-				{
-					this.OnODEONDATEChanging(value);
-					this.SendPropertyChanging();
-					this._ODEONDATE = value;
-					this.SendPropertyChanged("ODEONDATE");
-					this.OnODEONDATEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ARDATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ARDATE
-		{
-			get
-			{
-				return this._ARDATE;
-			}
-			set
-			{
-				if ((this._ARDATE != value))
-				{
-					this.OnARDATEChanging(value);
-					this.SendPropertyChanging();
-					this._ARDATE = value;
-					this.SendPropertyChanged("ARDATE");
-					this.OnARDATEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ARLOCK", DbType="Decimal(19,0)")]
-		public System.Nullable<decimal> ARLOCK
-		{
-			get
-			{
-				return this._ARLOCK;
-			}
-			set
-			{
-				if ((this._ARLOCK != value))
-				{
-					this.OnARLOCKChanging(value);
-					this.SendPropertyChanging();
-					this._ARLOCK = value;
-					this.SendPropertyChanged("ARLOCK");
-					this.OnARLOCKChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NA_START", DbType="Decimal(19,0)")]
-		public System.Nullable<decimal> NA_START
-		{
-			get
-			{
-				return this._NA_START;
-			}
-			set
-			{
-				if ((this._NA_START != value))
-				{
-					this.OnNA_STARTChanging(value);
-					this.SendPropertyChanging();
-					this._NA_START = value;
-					this.SendPropertyChanged("NA_START");
-					this.OnNA_STARTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_S_DATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> S_DATE
-		{
-			get
-			{
-				return this._S_DATE;
-			}
-			set
-			{
-				if ((this._S_DATE != value))
-				{
-					this.OnS_DATEChanging(value);
-					this.SendPropertyChanging();
-					this._S_DATE = value;
-					this.SendPropertyChanged("S_DATE");
-					this.OnS_DATEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_E_DATE", DbType="DateTime")]
-		public System.Nullable<System.DateTime> E_DATE
-		{
-			get
-			{
-				return this._E_DATE;
-			}
-			set
-			{
-				if ((this._E_DATE != value))
-				{
-					this.OnE_DATEChanging(value);
-					this.SendPropertyChanging();
-					this._E_DATE = value;
-					this.SendPropertyChanged("E_DATE");
-					this.OnE_DATEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COMPANYINFO", DbType="VarChar(255)")]
-		public string COMPANYINFO
-		{
-			get
-			{
-				return this._COMPANYINFO;
-			}
-			set
-			{
-				if ((this._COMPANYINFO != value))
-				{
-					this.OnCOMPANYINFOChanging(value);
-					this.SendPropertyChanging();
-					this._COMPANYINFO = value;
-					this.SendPropertyChanged("COMPANYINFO");
-					this.OnCOMPANYINFOChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

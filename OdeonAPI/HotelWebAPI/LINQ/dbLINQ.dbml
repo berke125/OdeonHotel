@@ -1,5 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CESTUR" Class="dbLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=10.10.10.18;Initial Catalog=CESTUR;User ID=sa;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CESTURConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="KARTAL" Class="dbLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.10.10.18;Initial Catalog=KARTAL;User ID=sa;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CESTURConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.THEDATE" Member="THEDATE">
+    <Type Name="THEDATE">
+      <Column Name="ODEONDATE" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ARDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ARLOCK" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="NA_START" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
+      <Column Name="S_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="E_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="COMPANYINFO" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.USERS" Member="USERS">
     <Type Name="USERS">
       <Column Name="CODE" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -172,23 +183,24 @@
       <Column Name="UPDATEBY" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
       <Column Name="BO_PAYMENT_CURRENCY" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Column Name="POSCARDID" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="ACOOUNTID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
       <Column Name="DEFCHANNEL" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="DEFSTAYTYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DEFSTATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORIGINCITY" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="SCHOOL" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="SCHOOLDEPARTMENT" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="SCHOOLCLASS" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="EMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="PASSWORD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CONTACTNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ORIGINCITY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="SCHOOL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="SCHOOLDEPARTMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="SCHOOLCLASS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Column Name="MIDNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="SMOKING" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="SMOKING" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="CONTACTEMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CONTACTADDRESS" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="SUMMERPREF" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Column Name="STUDENTPERIOD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="BO_PAYMENT_CURR" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="BO_PAYMENT_CURR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="SCHOOL_TYPE" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Column Name="CONTACT_TCNO" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
       <Column Name="CONTACT_PPNO" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
@@ -196,20 +208,19 @@
       <Column Name="CONTACT_COUNTRY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="CONTACT_CITY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="CONTACT_TOWN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ACOOUNTID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
-      <Column Name="CHN_CODE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
       <Column Name="STUDENTREMARK" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="CONTACT_JOB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="CONTACT_JOBADDRESS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="MAJORDISEASES" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ADDRESS_TOWN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CHN_CODE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="CRM_DISTRICT" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="CRM_CATEGORY" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="MERGED" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
       <Column Name="CONTACT_SOCIAL_SECURITY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="CONTACT_1_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="CONTACT_1_RELATION" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="CONTACT_1_TEL" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
-      <Column Name="CRM_DISTRICT" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
-      <Column Name="CRM_CATEGORY" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
-      <Column Name="PROFILE_PUBLIC" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.ROOMVIEW" Member="ROOMVIEW">
@@ -314,7 +325,6 @@
       <Column Name="SHAREID" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
       <Column Name="SHAREMASTER" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
       <Column Name="SHARESLAVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MARKET" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="[_COUT_TOTIME]" Member="_COUT_TOTIME" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
       <Column Name="[_CIN_REGNO]" Member="_CIN_REGNO" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
       <Column Name="[_CIN_FROMTIME]" Member="_CIN_FROMTIME" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
@@ -328,17 +338,6 @@
       <Column Name="[_CIN_BABY]" Member="_CIN_BABY" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
       <Column Name="DIRTY" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="OO" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.THEDATE" Member="THEDATE">
-    <Type Name="THEDATE">
-      <Column Name="ODEONDATE" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ARDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ARLOCK" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
-      <Column Name="NA_START" Type="System.Decimal" DbType="Decimal(19,0)" CanBeNull="true" />
-      <Column Name="S_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="E_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="COMPANYINFO" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

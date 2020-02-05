@@ -33,7 +33,7 @@ namespace HotelWebAPI.Controllers
                     ProfileId = Convert.ToInt32(userdb.PROFILEID),                   
                 };
                 var musteridb = db.MUSTERI.FirstOrDefault(e => e.MUSNO == userpoco.ProfileId);
-                if(musteridb!=null)
+                if (musteridb != null)
                 {
                     userpoco.FirstName = musteridb.FIRSTNAME;
                     userpoco.LastName = musteridb.LASTNAME;

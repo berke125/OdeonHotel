@@ -12,11 +12,10 @@ export class Sign_InComponent {
   public code: string = '';
   public password: string = '';
   constructor(private service: UserService, private router: Router) { }
-  isLoggedin = false;
+  isLoggedin=false;
   login() {
     var login = this.service.GetLogin(this.code, this.password).subscribe((user: any) => {
       if (user.Code != null) {
-
         this.isLoggedin = true;
         alert('Başarıyla giriş yaptınız.' + user.FirstName +' '+user.LastName);
         localStorage.setItem('User', JSON.stringify(user));
