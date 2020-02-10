@@ -84,7 +84,10 @@
   .dates-row {
     padding-left: 30px;
   }
- 
+ .filter-error
+ {
+   padding-left:500px;
+ }
  
 </style>
 <form>
@@ -97,7 +100,12 @@
         <mat-radio-button color="primary" class="infobox4" value="4">Bugün Girenler</mat-radio-button>
         <mat-radio-button color="primary" class="infobox5" value="5">Bugün Çıkanlar</mat-radio-button>
       </mat-radio-group>
-
+      <mat-form-field >
+        <mat-label>Customer Name or Surname</mat-label>
+        <input matInput [(ngModel)]="isim" autocomplete="off" type="text" name="search" value="isim">
+        
+      </mat-form-field>
+      
       <table class="table">
         <thead>
           <tr>
@@ -108,7 +116,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of hotel_users">
+          <tr *ngFor="let user of hotel_users | filter:isim">
+            <th *ngIf="(hotel_users | filter:isim).length===0">Eşleşme yoktur.</th>
             <th [ngClass]="user.No>0 ? 'row2':'row1'">
               {{user.OdaNo}}
               {{user.OdaTip}}

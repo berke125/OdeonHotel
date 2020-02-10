@@ -29,9 +29,9 @@ export class UserService
     //return this._http.get<any>(this.rootURL + '/USERS?oda_no=' + oda_no);
     return this._http.get(this.rootURL + '/RoomView');
   }
-  GetRooms(val: string)
+  GetRooms(val: string,name:string)
   {
-    return this._http.get(this.rootURL + '/RoomView?roomsfilter='+val);
+    return this._http.get(this.rootURL + '/RoomView?roomsfilter='+val+'&name'+name);
   }
   GetDate()
   {

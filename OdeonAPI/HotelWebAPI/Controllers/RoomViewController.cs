@@ -80,7 +80,7 @@ namespace HotelWebAPI.Controllers
 
             return roomlistPoco;
         }
-        public List<RoomPoco> GetRoomsByFilter(string roomsfilter)
+        public List<RoomPoco> GetRoomsByFilter(string roomsfilter, string name)
         {
             List<ROOMVIEW> roomdblist = new List<ROOMVIEW>();
             switch (roomsfilter)
@@ -117,6 +117,13 @@ namespace HotelWebAPI.Controllers
                                   select x).ToList();
                     break;
             }
+            if(string.IsNullOrEmpty(name)==false)
+            {
+                          roomdblist = (from x in roomdblist
+                          where (x.FIRSTNAME.Contains(name) || x.LASTNAME.Contains(name))
+                          select x).ToList();
+            }
+           
             THEDATE theDate = (from x in db.THEDATE
                                orderby x.ODEONDATE descending
                                select x).First();

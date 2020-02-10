@@ -8,12 +8,12 @@ import { UserService } from '../shared/USER.service';
 })
 export class RoomListComponent implements OnInit
 {
-  //hotel_users: any=[];
+  hotel_users: any=[];
   public myModel: string = '1';
-  hotel_users: any;
-  public odano: string = '';
-  public no: number;
-
+  //public odano: string = '';
+  //public no: number;
+  public isim: string = '';
+  
   constructor(private service: UserService, private router: Router) { }
   AllRooms()
   {
@@ -22,7 +22,7 @@ export class RoomListComponent implements OnInit
   }
   EmptyRooms()
   {
-    this.service.GetRooms(this.myModel).subscribe((data) => this.hotel_users = data);
+    this.service.GetRooms(this.myModel,this.isim).subscribe((data) => this.hotel_users = data);
   }
   ngOnInit()
   {

@@ -19,7 +19,7 @@ import { CustomerListComponent } from './CustomerList/CustomerList.component';
 import { ForgottenPasswordComponent } from './Forgotten_Password/Forgotten_Password.component';
 import { ChangePasswordComponent } from './Change_Password/Change_Password.component';
 import { RoomListComponent } from './Rooms/RoomList.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -48,6 +48,7 @@ import { RoomListComponent } from './Rooms/RoomList.component';
     MatIconModule,
     HttpClientModule,
     MatRadioModule,
+    Ng2SearchPipeModule,
     ToastrModule.forRoot()
   ],
   providers: [CustomerService],

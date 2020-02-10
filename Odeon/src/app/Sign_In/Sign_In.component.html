@@ -48,7 +48,6 @@
         <input name=aCode #aCode="ngModel" [(ngModel)]="code" matInput type="text" required>
         <div class="validation-error" *ngIf="aCode.invalid && (aCode.dirty || aCode.touched)">
           This field is required.
-
         </div>
       </mat-form-field>
       <br />
@@ -58,15 +57,9 @@
         <div class="validation-error" *ngIf="aPassword.invalid && aPassword.touched">This field is required.</div>
       </mat-form-field>
       <br />
-
       <div class="spacer"></div>
       <button mat-raised-button [disabled]="form.invalid" (click)="login()">Login</button>
-
       <button mat-raised-button routerLink="/Home">Cancel</button>
-
     </div>
-
-
-
   </div>
 </form>
