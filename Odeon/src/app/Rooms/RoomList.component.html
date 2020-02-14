@@ -4,14 +4,12 @@
     padding-left: 100px;
     margin: 0px;
     padding-top: 5px;
-    
   }
 
   .center {
     display: flex;
     justify-content: center;
     align-items: center;
-    
   }
 
   mark {
@@ -29,7 +27,7 @@
   }
 
   .general_row {
-    padding-left: 85px;
+    padding-left: 100px;
   }
 
   .general_row2 {
@@ -84,11 +82,16 @@
   .dates-row {
     padding-left: 30px;
   }
- .filter-error
- {
-   padding-left:500px;
- }
- 
+
+  .filter-error {
+    padding-top: 13px;
+    padding-bottom: 20px;
+    color: red;
+  }
+
+  .input_content {
+    width: 280px;
+  }
 </style>
 <form>
   <div class="center">
@@ -100,12 +103,34 @@
         <mat-radio-button color="primary" class="infobox4" value="4">Bugün Girenler</mat-radio-button>
         <mat-radio-button color="primary" class="infobox5" value="5">Bugün Çıkanlar</mat-radio-button>
       </mat-radio-group>
-      <mat-form-field >
-        <mat-label>Customer Name or Surname</mat-label>
-        <input matInput [(ngModel)]="isim" autocomplete="off" type="text" name="search" value="isim">
-        
-      </mat-form-field>
-      
+
+      <div [ngSwitch]="myModel">
+        <mat-form-field *ngSwitchCase="1">
+          <mat-label>Enter the customer's name or surname:  </mat-label>
+          <input class="input_content" matInput [(ngModel)]="isim" type="text" name="search">
+          <button mat-button *ngIf="isim" matSuffix mat-icon-button aria-label="Clear" (click)="isim=''">
+            <mat-icon>close</mat-icon>
+          </button>
+          <div *ngIf="sayac==0">Tüm odalar doludur.</div>
+          <div>Boş odalar: {{sayac}}</div>
+          <div class="filter-error" *ngIf="(hotel_users | filter:isim).length===0">Böyle bir kayıt yoktur.</div>
+        </mat-form-field>
+        <div *ngSwitchCase="2">
+          <div class="filter-error" *ngIf="hotel_users.length===0">Hiç boş oda kalmamıştır.</div>
+        </div>
+        <div *ngSwitchCase="3">
+          <div class="filter-error" *ngIf="hotel_users.length===0">Dolu olan oda yoktur.</div>
+        </div>
+        <div *ngSwitchCase="4">
+          <div class="filter-error" *ngIf="hotel_users.length===0">Bugün giren yoktur.</div>
+        </div>
+        <div *ngSwitchCase="5">
+          <div class="filter-error" *ngIf="hotel_users.length===0">Bugün çıkan yoktur.</div>
+        </div>
+        <div *ngSwitchDefault="">Standard Table</div>
+
+      </div>
+
       <table class="table">
         <thead>
           <tr>
@@ -117,7 +142,6 @@
         </thead>
         <tbody>
           <tr *ngFor="let user of hotel_users | filter:isim">
-            <th *ngIf="(hotel_users | filter:isim).length===0">Eşleşme yoktur.</th>
             <th [ngClass]="user.No>0 ? 'row2':'row1'">
               {{user.OdaNo}}
               {{user.OdaTip}}

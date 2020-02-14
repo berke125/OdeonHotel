@@ -92,7 +92,6 @@ D:\WORK\Odeon Hotel\OdeonAPI\HotelWebAPI\bin\tr\System.Web.Razor.resources.dll
 D:\WORK\Odeon Hotel\OdeonAPI\HotelWebAPI\bin\tr\System.Web.WebPages.resources.dll
 D:\WORK\Odeon Hotel\OdeonAPI\HotelWebAPI\bin\tr\System.Web.WebPages.Deployment.resources.dll
 D:\WORK\Odeon Hotel\OdeonAPI\HotelWebAPI\bin\tr\System.Web.WebPages.Razor.resources.dll
-D:\WORK\Odeon Hotel\OdeonAPI\HotelWebAPI\obj\Debug\HotelWebAPI.csprojAssemblyReference.cache
 D:\WORK\Odeon Hotel\OdeonAPI\HotelWebAPI\obj\Debug\HotelWebAPI.csproj.CoreCompileInputs.cache
 D:\WORK\Odeon Hotel\OdeonAPI\HotelWebAPI\obj\Debug\HotelWebAPI.csproj.CopyComplete
 D:\WORK\Odeon Hotel\OdeonAPI\HotelWebAPI\obj\Debug\HotelWebAPI.dll
